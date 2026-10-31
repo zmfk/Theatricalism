@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>这一页不在档案馆里 · 剧场主义</title>
+<meta name="description" content="你打开的地址不在剧场主义档案馆里：可能已改名、已合并，或从未存在。">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0a090d">
+<style>
+  :root{--bg:#0a090d;--fg:#e8e4dc;--dim:#8d8879;--line:#26232c;--gold:#c9a227;--fsk:1}
+  html[data-theme="light"]{--bg:#f6f3ec;--fg:#221f1a;--dim:#6b655a;--line:#ddd6c8;--gold:#8a6d12}
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  html{scrollbar-gutter:stable}
+  body{min-height:100vh;display:flex;align-items:center;justify-content:center;background:var(--bg);color:var(--fg);
+       font:16px/1.85 "Noto Serif SC","Songti SC",Georgia,serif;padding:32px}
+  .box{max-width:640px;text-align:center}
+  .code{font:700 72px/1 "JetBrains Mono",Consolas,monospace;color:var(--gold);letter-spacing:.08em;margin:0 0 18px}
+  h1{font-size:calc(22px * var(--fsk));margin:0 0 10px;font-weight:600}
+  p{color:var(--dim);margin:0 0 26px}
+  .links{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+  a{display:inline-block;padding:9px 20px;border:1px solid var(--line);border-radius:999px;
+    color:var(--fg);text-decoration:none;font-size:calc(14px * var(--fsk));transition:.18s}
+  a:hover{border-color:var(--gold);color:var(--gold)}
+  .hint{margin-top:26px;font-size:calc(12px * var(--fsk));color:var(--dim);opacity:.8}
+</style>
+</head>
+<body>
+<div class="box">
+  <p class="code">404</p>
+  <h1>这一页不在档案馆里</h1>
+  <p>链接可能被改过，或者这一章还没有搬进来。</p>
+  <div class="links">
+    <a id="home" href="./index.html">回到档案馆首页</a>
+    <a id="concepts" href="./concepts/index.html">翻概念词典</a>
+    <a id="dialogue" href="./dialogue/index.html">进对话录</a>
+  </div>
+  <p class="hint">如果你是从其他站点的链接过来的，可以在地址栏里回到本站首页再找。</p>
+</div>
+<script>
+(function(){
+  // 三个按钮在 HTML 里已写成相对路径（./index.html 等），默认就能用：
+  //   · file:// 直接打开 404.html —— 基准是文件所在目录，相对路径本身正确；
+  //   · 部署在根目录（/404.html）—— 相对路径也正确。
+  // 只有在「GitHub Pages 项目页 /repo/ + 深层路径」这种相对基会被改写的场景，
+  // 才需要知道站点根；这里改成逐个候选去探测 assets/style.css，谁探到用谁，
+  // 不再用「路径段数」硬猜（之前本地 file:// 打开会算出 /D:/ 这种坏根）。
+  if (location.protocol === 'file:') return;
+
+  var TARGETS = { home: 'index.html', concepts: 'concepts/index.html', dialogue: 'dialogue/index.html' };
+  function apply(base) {
+    for (var id in TARGETS) {
+      var el = document.getElementById(id);
+      if (el) el.href = base + TARGETS[id];
+    }
+  }
+
+  var parts = location.pathname.split('/').filter(Boolean);
+  var cands = [];
+  for (var i = parts.length - 1; i >= 1; i--) cands.push('/' + parts.slice(0, i).join('/') + '/');
+  cands.push('/');
+
+  (function probe(k) {
+    if (k >= cands.length) return;            // 全探测不到：保留相对链接
+    fetch(cands[k] + 'assets/style.css', { method: 'HEAD', cache: 'no-store' })
+      .then(function (r) { if (r && r.ok) apply(cands[k]); else probe(k + 1); })
+      .catch(function () { probe(k + 1); });
+  })(0);
+})();
+</script>
+</body>
+</html>

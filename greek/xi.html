@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ξ · 冗余审计 | 剧场主义原文档子页</title>
+<meta name="description" content="剧场主义xi.txt 的原文档子页：3 组问答全文、原始文本 20467 字符，不截断。">
+<script>try{if(localStorage.getItem('th-theme')==='light')document.documentElement.dataset.theme='light';var f=localStorage.getItem('th-fs');if(f==='small'||f==='large')document.documentElement.dataset.fs=f}catch(e){}</script>
+<style>
+:root{
+  --bg:#0a090d; --bg2:#100e15; --panel:#15121b; --panel2:#1b1724;
+  --ink:#e9e2d6; --muted:#a2988c; --dim:#6f665d; --body:#d9d1c4; --thumb:rgba(217,179,108,.26); --thumb2:rgba(217,179,108,.46); --topbg:rgba(10,9,13,.82);
+  --gold:#d9b36c; --gold2:#f4e3bd; --line:rgba(217,179,108,.16); --line2:rgba(255,255,255,.07);
+  --serif:"Source Han Serif SC","Noto Serif SC","Songti SC",STSong,SimSun,serif;
+  --sans:"Noto Sans SC","PingFang SC","Microsoft YaHei",system-ui,sans-serif;
+  --mono:"JetBrains Mono","Cascadia Code",Consolas,monospace;
+  --fs:clamp(14.5px,0.62vw + 5px,19px);
+  --fsk:1;
+}/* 字号档位：A- / A+ */
+html[data-fs="small"]{--fs:clamp(13.5px,0.56vw + 4.5px,17.5px);--fsk:.93}
+html[data-fs="large"]{--fs:clamp(16px,0.70vw + 5.4px,21px);--fsk:1.1}
+
+/* 阅读模式：浅色、低装饰，适合长读与打印 */
+html[data-theme="light"]{
+  --bg:#f6f1e7; --bg2:#efe7d9; --panel:#fffdf8; --panel2:#f4ecdd;
+  --ink:#241f1a; --muted:#5b5348; --dim:#8a7f70; --body:#3c352b; --thumb:rgba(138,106,47,.28); --thumb2:rgba(138,106,47,.48); --topbg:rgba(246,241,231,.92);
+  --gold:#8a6a2f; --gold2:#6b511f; --line:rgba(120,90,40,.24); --line2:rgba(120,90,40,.14);
+}
+html[data-theme="light"] body{background-image:radial-gradient(1200px 600px at 50% -200px,rgba(138,106,47,.10),transparent 70%)}
+html[data-theme="light"] .topnav{background:rgba(246,241,231,.88)}
+html[data-theme="light"] .hero:before{opacity:.45}
+html[data-theme="light"] .hero:after{opacity:.3}
+html[data-theme="light"] .hero h1{background:linear-gradient(180deg,#3a2d17,#6b511f 60%,#8a6a2f);-webkit-background-clip:text;background-clip:text}
+html[data-theme="light"] .hero .en{-webkit-text-fill-color:var(--dim)}
+html[data-theme="light"] .srcbody{color:#4b4337}
+html[data-theme="light"] .qa .a{color:#3c352b}
+html[data-theme="light"] .rec blockquote{color:#4b4337}
+html[data-theme="light"] .matrix td{color:#241f1a}
+html[data-theme="light"] mark{background:rgba(180,140,50,.35)}
+html[data-theme="light"] .btn-copy:hover{background:rgba(138,106,47,.10)}
+html[data-theme="light"] #progress{background:linear-gradient(90deg,#8a6a2f,#b08a45)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--navh,86px) + 12px);scrollbar-gutter:stable}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.75;
+  background-image:radial-gradient(1200px 600px at 50% -200px,rgba(217,179,108,.07),transparent 70%);}
+a{color:var(--gold);text-decoration:none}
+::selection{background:rgba(217,179,108,.28)}
+#progress{position:fixed;top:0;left:0;height:2px;width:0;background:linear-gradient(90deg,var(--gold),var(--gold2));z-index:100}
+
+/* nav */
+.topnav{position:sticky;top:0;z-index:90;display:flex;align-items:center;gap:26px;padding:14px 34px;
+  background:rgba(10,9,13,.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--line2)}
+.topnav .brand{font-family:var(--serif);font-size:calc(17px * var(--fsk));letter-spacing:.14em;color:var(--gold2);white-space:nowrap}
+.topnav .brand em{font-style:normal;color:var(--dim);font-size:calc(11px * var(--fsk));letter-spacing:.2em;margin-left:10px;font-family:var(--mono)}
+.topnav nav{display:flex;gap:20px;margin-left:auto;flex-wrap:wrap}
+.topnav nav a{font-size:calc(13px * var(--fsk));color:var(--muted);letter-spacing:.08em;padding:4px 0;border-bottom:1px solid transparent;transition:.25s}
+.topnav nav a:hover,.topnav nav a.on{color:var(--gold2);border-color:var(--gold)}
+.theme-btn{background:transparent;border:1px solid var(--line2);color:var(--gold);width:30px;height:30px;line-height:1;cursor:pointer;font-size:calc(14px * var(--fsk));flex:0 0 auto;transition:.2s}
+.theme-btn:hover{border-color:var(--gold);background:rgba(217,179,108,.08)}
+
+/* hero */
+.hero{position:relative;min-height:88vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:120px 24px 80px;overflow:hidden}
+.hero:before{content:"";position:absolute;inset:0;background:
+  radial-gradient(60% 55% at 50% 0%,rgba(217,179,108,.20),transparent 62%),
+  radial-gradient(40% 40% at 80% 80%,rgba(124,92,255,.10),transparent 70%),
+  radial-gradient(40% 40% at 20% 70%,rgba(46,196,182,.07),transparent 70%);pointer-events:none}
+.hero:after{content:"";position:absolute;left:50%;top:60%;width:1px;height:38vh;background:linear-gradient(var(--line),transparent);opacity:.6}
+.hero-inner{position:relative;max-width:900px;width:100%}
+.eyebrow{font-family:var(--mono);font-size:calc(11px * var(--fsk));letter-spacing:.36em;color:var(--dim);margin:0 0 26px}
+.hero h1{font-family:var(--serif);font-weight:600;font-size:calc(clamp(56px,11vw,128px) * var(--fsk));line-height:1;margin:0;letter-spacing:.06em;
+  background:linear-gradient(180deg,#fff7e6,#e6cf9c 55%,#a8874f);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .en{display:block;font-family:var(--mono);font-size:calc(12px * var(--fsk));letter-spacing:.5em;color:var(--dim);margin-top:18px;background:none;-webkit-text-fill-color:var(--dim)}
+.motto{font-family:var(--serif);font-size:calc(clamp(20px,3vw,30px) * var(--fsk));letter-spacing:.32em;color:var(--gold2);margin:34px 0 26px;text-indent:.32em}
+.lede{max-width:640px;margin:0 auto;color:var(--muted);font-size:calc(15px * var(--fsk));line-height:2}
+.lede b{color:var(--ink);font-weight:500}
+.statbar{display:grid;grid-template-columns:repeat(6,1fr);margin:54px auto 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);max-width:900px}
+@media(max-width:640px){.statbar{grid-template-columns:repeat(2,1fr)}.stat{border-top:1px solid var(--line2)}.stat:nth-child(-n+2){border-top:0}}
+.stat{padding:18px 8px;border-left:1px solid var(--line2);text-align:center}
+.stat:first-child{border-left:0}
+.stat b{display:block;font-family:var(--serif);font-size:calc(22px * var(--fsk));color:var(--gold2);letter-spacing:0;white-space:nowrap}
+.stat span{font-size:calc(11px * var(--fsk));color:var(--dim);letter-spacing:.18em}
+.scroll-hint{margin-top:44px;font-size:calc(11px * var(--fsk));letter-spacing:.3em;color:var(--dim)}
+
+/* sections */
+main{position:relative}
+section{padding:96px 34px;max-width:1180px;margin:0 auto}
+section+section{border-top:1px solid var(--line2)}
+.sec-head{display:flex;align-items:baseline;gap:18px;margin-bottom:14px}
+.sec-head .no{font-family:var(--mono);font-size:calc(12px * var(--fsk));color:var(--gold);letter-spacing:.2em;opacity:.8}
+.sec-head h2{font-family:var(--serif);font-size:calc(clamp(26px,3.4vw,38px) * var(--fsk));font-weight:600;margin:0;letter-spacing:.06em}
+.sec-head .en{font-family:var(--mono);font-size:calc(10px * var(--fsk));letter-spacing:.24em;color:var(--dim);margin-left:auto}
+.sec-sub{color:var(--muted);max-width:760px;margin:0 0 46px;font-size:calc(14.5px * var(--fsk))}
+
+/* axioms */
+.ax-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media(max-width:860px){.ax-grid{grid-template-columns:1fr}}
+.ax{border:1px solid var(--line);background:linear-gradient(160deg,var(--panel),rgba(21,18,27,.3));padding:26px 24px;position:relative;overflow:hidden}
+.ax:before{content:attr(data-n);position:absolute;right:14px;top:2px;font-family:var(--serif);font-size:calc(72px * var(--fsk));color:rgba(217,179,108,.08);line-height:1}
+.ax h3{font-family:var(--serif);margin:0 0 10px;font-size:calc(19px * var(--fsk));color:var(--gold2)}
+.ax p{margin:0;color:var(--muted);font-size:calc(13.5px * var(--fsk))}
+.tension{margin-top:26px;padding:20px 24px;border-left:2px solid var(--gold);background:rgba(217,179,108,.04);font-size:calc(13.5px * var(--fsk));color:var(--muted)}
+.tension b{color:var(--gold2);font-weight:500}
+
+/* metaphor */
+.meta-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:30px}
+@media(max-width:860px){.meta-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.meta-grid{grid-template-columns:1fr}}
+.meta{border:1px solid var(--line2);padding:20px;transition:.3s;background:var(--panel)}
+.meta:hover{border-color:var(--line);transform:translateY(-2px)}
+.meta .glyph{font-family:var(--serif);font-size:calc(30px * var(--fsk));color:var(--gold);letter-spacing:.08em;display:block;margin-bottom:8px}
+.meta p{margin:0;color:var(--muted);font-size:calc(13px * var(--fsk))}
+
+/* concepts */
+.toolbar{position:sticky;top:var(--navh,64px);z-index:60;padding:14px 0 16px;background:var(--bg);border-bottom:1px solid var(--line2);margin-bottom:26px}
+.search-row{display:flex;gap:12px;align-items:center}
+.search-row input{flex:1;min-width:0;background:var(--panel);border:1px solid var(--line2);color:var(--ink);padding:12px 16px;font-family:var(--sans);font-size:calc(14px * var(--fsk));outline:none;transition:.25s}
+.search-row input:focus{border-color:var(--gold)}
+.search-row input::placeholder{color:var(--dim)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.chip{background:transparent;border:1px solid var(--line2);color:var(--muted);padding:5px 12px;font-size:calc(12px * var(--fsk));cursor:pointer;transition:.2s;display:flex;align-items:center;gap:7px;font-family:var(--sans)}
+.chip i{width:6px;height:6px;border-radius:50%;background:var(--c);display:inline-block;opacity:.9}
+.chip:hover{border-color:var(--line);color:var(--ink)}
+.chip.on{border-color:var(--gold);color:var(--gold2);background:rgba(217,179,108,.08)}
+#count{font-size:calc(12px * var(--fsk));color:var(--dim);margin-top:10px;font-family:var(--mono)}
+.concept-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:16px}
+.card{border:1px solid var(--line2);border-left:2px solid var(--c);background:linear-gradient(170deg,var(--panel2),var(--panel) 60%);padding:22px 22px 16px;transition:.3s;scroll-margin-top:150px}
+.card:hover{border-color:var(--line);border-left-color:var(--c);box-shadow:0 18px 44px -28px rgba(0,0,0,.9);transform:translateY(-2px)}
+.card-top{display:flex;align-items:baseline;justify-content:space-between;gap:12px}
+.card h3{font-family:var(--serif);font-size:calc(19px * var(--fsk));margin:0;letter-spacing:.02em;line-height:1.4}
+.card .en{font-family:var(--mono);font-size:calc(9.5px * var(--fsk));letter-spacing:.14em;color:var(--dim);text-align:right;text-transform:uppercase}
+.tags{display:flex;gap:8px;margin:10px 0 14px;flex-wrap:wrap}
+.tags .cat{font-size:calc(10.5px * var(--fsk));letter-spacing:.16em;color:var(--c);border:1px solid color-mix(in srgb,var(--c) 40%,transparent);padding:1px 8px}
+.tags .since{font-size:calc(10.5px * var(--fsk));letter-spacing:.1em;color:var(--dim);font-family:var(--mono)}
+.def{margin:0 0 12px;font-size:calc(14px * var(--fsk));color:var(--body)}
+.points{margin:0;padding-left:16px;color:var(--muted);font-size:calc(12.8px * var(--fsk))}
+.points li{margin:5px 0}
+details.src{margin-top:14px;border-top:1px dashed var(--line2);padding-top:10px}
+details.src summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;font-size:calc(11.5px * var(--fsk));color:var(--gold);letter-spacing:.08em}
+details.src summary::-webkit-details-marker{display:none}
+details.src[open] summary svg{transform:rotate(180deg)}
+details.src svg{transition:.2s;opacity:.7}
+.srcbody{margin-top:10px;font-size:calc(12.5px * var(--fsk));line-height:1.95;color:var(--muted);white-space:pre-wrap;max-height:420px;overflow:auto;padding-right:8px;border-left:1px solid var(--line2);padding-left:12px}
+a.see{display:inline-block;margin-top:10px;margin-right:14px;font-size:calc(11.5px * var(--fsk));color:var(--dim)}
+a.see-doc{color:var(--gold);border-bottom:1px solid var(--line)}
+a.see-doc:hover{color:var(--gold2)}
+.rel{margin-top:12px;padding-top:10px;border-top:1px dashed var(--line2);font-size:calc(11.5px * var(--fsk));color:var(--dim);display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center}
+.rel span{letter-spacing:.12em;opacity:.75;font-size:calc(10px * var(--fsk))}
+.rel a{color:var(--gold);border-bottom:1px dotted var(--line);padding-bottom:1px}
+.rel a:hover{border-color:var(--gold)}
+a.see:hover{color:var(--gold)}
+
+/* lineage */
+.timeline{position:relative;margin:0 0 20px;padding-left:0}
+.timeline:before{content:"";position:absolute;left:152px;top:6px;bottom:6px;width:1px;background:linear-gradient(var(--line),var(--line2))}
+.vrow{display:grid;grid-template-columns:130px 1fr;gap:44px;position:relative;padding:12px 0}
+.vrow:before{content:"";position:absolute;left:146px;top:26px;width:13px;height:13px;border-radius:50%;background:var(--bg);border:1px solid var(--gold);z-index:2}
+.vrow.mile:before{background:var(--gold);box-shadow:0 0 18px rgba(217,179,108,.5)}
+.vtag{text-align:right;padding-top:12px;white-space:nowrap}
+.vtag b{font-family:var(--serif);font-size:calc(20px * var(--fsk));color:var(--gold2);display:block;line-height:1.15;letter-spacing:0}
+.vtag span{font-size:calc(10.5px * var(--fsk));letter-spacing:.18em;color:var(--dim)}
+.vbody{padding:12px 18px 14px;border:1px solid var(--line2);background:var(--panel)}
+.vrow.mile .vbody{border-color:var(--line);background:linear-gradient(150deg,var(--panel2),var(--panel))}
+.vbody h4{margin:0 0 4px;font-family:var(--serif);font-size:calc(16px * var(--fsk));color:var(--ink);font-weight:500}
+.vbody h4 em{font-style:normal;font-size:calc(10.5px * var(--fsk));letter-spacing:.14em;color:var(--gold);margin-left:10px;font-family:var(--mono)}
+.vbody .note{font-size:calc(12.5px * var(--fsk));color:var(--dim);margin:0 0 8px}
+.vbody ul{margin:6px 0 0;padding-left:16px;color:var(--muted);font-size:calc(13px * var(--fsk));columns:2;column-gap:26px}
+@media(max-width:720px){.vbody ul{columns:1}.timeline:before{left:72px}.vrow{grid-template-columns:60px 1fr;gap:22px}.vrow:before{left:66px}.vtag b{font-size:calc(14px * var(--fsk))}}
+.vbody ul li{margin:3px 0;break-inside:avoid}
+.snaptable{margin-top:40px;overflow-x:auto;border:1px solid var(--line2)}
+table{border-collapse:collapse;width:100%;font-size:calc(12.5px * var(--fsk))}
+th,td{padding:10px 14px;text-align:left;border-bottom:1px solid var(--line2);white-space:nowrap}
+thead th{background:var(--panel2);color:var(--gold);font-weight:500;letter-spacing:.08em;font-size:calc(11px * var(--fsk))}
+tbody tr:hover{background:rgba(217,179,108,.04)}
+
+/* structure */
+.chap-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px}
+.chap{border:1px solid var(--line2);padding:16px 18px;background:var(--panel);transition:.25s}
+.chap.wide{grid-column:span 2}
+.chap:hover{border-color:var(--line)}
+.chap header{display:flex;gap:12px;align-items:baseline}
+.chap .num{font-family:var(--mono);font-size:calc(11px * var(--fsk));color:var(--gold);opacity:.8}
+.chap h4{margin:0;font-size:calc(13.5px * var(--fsk));font-weight:500;line-height:1.5;color:var(--ink)}
+.chap .subs{display:flex;flex-wrap:wrap;gap:5px;margin-top:10px}
+.chap .sub{font-size:calc(10.5px * var(--fsk));color:var(--dim);border:1px solid var(--line2);padding:1px 7px}
+.chap .badge{font-size:calc(9.5px * var(--fsk));letter-spacing:.1em;color:var(--gold);border:1px solid var(--line);padding:1px 6px;white-space:nowrap;margin-left:auto}
+.chap .badge+.subs{margin-top:8px}
+
+/* tools */
+.tool-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px;margin-bottom:18px}
+.tool-card{border:1px solid var(--line2);background:var(--panel);padding:16px 18px;transition:.25s}
+.tool-card:hover{border-color:var(--line)}
+.tool-card b{font-family:var(--serif);font-size:calc(17px * var(--fsk));color:var(--gold2);font-weight:500}
+.tool-card p{margin:7px 0 0;font-size:calc(12.5px * var(--fsk));color:var(--muted);line-height:1.8}
+.tool-bottom{display:grid;grid-template-columns:1.1fr .9fr;gap:14px}
+@media(max-width:720px){.tool-bottom{grid-template-columns:1fr}}
+.tool-floor,.tool-edge{border:1px solid var(--line);padding:18px 20px;background:linear-gradient(160deg,var(--panel2),var(--panel))}
+.tool-floor b,.tool-edge b{font-family:var(--serif);font-size:calc(15px * var(--fsk));color:var(--gold2);font-weight:500;letter-spacing:.06em}
+.tool-floor p,.tool-edge p{margin:8px 0 0;font-size:calc(12.8px * var(--fsk));color:var(--muted);line-height:1.9}
+.tool-edge{border-left:2px solid var(--gold)}
+.tools-link{margin-top:16px;font-size:calc(12px * var(--fsk));color:var(--dim)}
+.tools-link a{color:var(--gold)}
+
+/* source copy */
+.src-actions{display:flex;align-items:center;gap:10px;margin-top:8px}
+.btn-copy{background:transparent;border:1px solid var(--line2);color:var(--gold);font-size:calc(10.5px * var(--fsk));letter-spacing:.08em;padding:3px 9px;cursor:pointer;font-family:var(--sans);transition:.2s}
+.btn-copy:hover{border-color:var(--gold);background:rgba(217,179,108,.08)}
+.copied{font-size:calc(10.5px * var(--fsk));color:var(--gold);opacity:0;transition:.2s}
+.copied.on{opacity:1}
+
+/* records */
+.rec-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(430px,1fr));gap:16px}
+@media(max-width:720px){.rec-grid{grid-template-columns:1fr}}
+.rec{display:grid;grid-template-columns:80px 1fr;gap:16px;border:1px solid var(--line2);background:var(--panel);padding:20px}
+.rec.empty{opacity:.5}
+.rec-letter{font-family:var(--serif);font-size:calc(44px * var(--fsk));color:var(--gold);line-height:1;border-right:1px solid var(--line2);padding-right:14px}
+.rec-letter span{display:block;font-family:var(--mono);font-size:calc(10px * var(--fsk));letter-spacing:.18em;color:var(--dim);margin-top:10px}
+.rec h4{font-family:var(--serif);font-size:calc(16px * var(--fsk));margin:0 0 6px;font-weight:500}
+.rec-desc{font-size:calc(12.5px * var(--fsk));color:var(--muted);margin:0 0 10px}
+.rec blockquote{margin:0 0 10px;padding-left:12px;border-left:1px solid var(--line);color:#cfc6b8;font-size:calc(12.5px * var(--fsk));font-style:normal}
+.rec-meta{display:flex;gap:14px;font-family:var(--mono);font-size:calc(10.5px * var(--fsk));color:var(--dim)}
+.mini-bars{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px 20px;margin-top:12px;max-width:330px}
+.mini{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:7px;font-size:calc(10.5px * var(--fsk));color:var(--dim)}
+.mini b{font-weight:400;color:var(--muted);white-space:nowrap}
+.mini i{display:block;height:3px;background:var(--gold);opacity:.5;border-radius:2px}
+.mini em{font-style:normal;font-family:var(--mono);font-size:calc(9.5px * var(--fsk));opacity:.65;min-width:22px;text-align:right}
+
+/* dialogue */
+.dlg-list{max-width:1040px;margin:0 auto}
+.dlg{border:1px solid var(--line2);background:var(--panel);transition:border-color .2s}
+.dlg+.dlg{margin-top:9px}
+.dlg summary{display:flex;align-items:baseline;gap:16px;padding:14px 20px;cursor:pointer;list-style:none;border-left:2px solid transparent}
+.dlg summary::-webkit-details-marker{display:none}
+.dlg summary:hover{background:var(--panel2);border-left-color:rgba(217,179,108,.45)}
+.dlg[open]{border-color:var(--line)}
+.dlg[open] summary{border-left-color:var(--gold);border-bottom:1px solid var(--line2)}
+.dno{font-family:var(--mono);font-size:calc(10px * var(--fsk));letter-spacing:.1em;color:var(--gold);opacity:.85;white-space:nowrap;min-width:62px}
+.dlg h4{margin:0;font-family:var(--serif);font-size:calc(15px * var(--fsk));font-weight:500;line-height:1.55}
+.dmeta{margin-left:auto;font-size:calc(10px * var(--fsk));color:var(--dim);font-family:var(--mono);white-space:nowrap}
+.dlg-body{padding:18px 22px 22px}
+.qa{margin:0 0 18px}
+.qa:last-child{margin-bottom:0}
+.qa .q{margin:0 0 8px;font-size:calc(13px * var(--fsk));color:var(--gold2);line-height:1.75}
+.qa .q span{font-family:var(--mono);font-size:calc(9px * var(--fsk));border:1px solid var(--line);padding:0 5px;margin-right:9px;color:var(--gold);letter-spacing:.08em;vertical-align:1px}
+.qa .a{margin:0;font-size:calc(13px * var(--fsk));color:#d3cabd;line-height:1.95;white-space:pre-wrap}
+.dlg-note{margin:14px 0 0;padding:10px 14px;border-left:2px solid var(--line);color:var(--dim);font-size:calc(12px * var(--fsk));line-height:1.85;white-space:pre-wrap}
+.dlg-src{display:inline-block;margin:0 0 14px;font-size:calc(11.5px * var(--fsk));color:var(--gold);border-bottom:1px solid var(--line)}
+.dlg-src:hover{color:var(--gold2)}
+.dlg-actions{display:flex;gap:8px;align-items:center;margin-top:12px;flex-wrap:wrap}
+.dlg-actions .hint{font-size:calc(10.5px * var(--fsk));color:var(--dim);margin-left:4px}
+.dlg-actions-inline{display:flex;align-items:center;gap:10px;margin-top:16px;padding-top:12px;border-top:1px dashed var(--line2)}
+.dlg-toc{border:1px solid var(--line2);background:var(--panel);margin:0 auto 12px;max-width:1040px}
+.dlg-toc summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;padding:12px 18px;font-size:calc(12px * var(--fsk));color:var(--gold);letter-spacing:.08em}
+.dlg-toc summary::-webkit-details-marker{display:none}
+.dlg-toc[open] summary{border-bottom:1px solid var(--line2)}
+.dlg-toc svg{transition:.2s;opacity:.7}
+.dlg-toc[open] svg{transform:rotate(180deg)}
+.toc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:4px;padding:12px 14px 16px;max-height:420px;overflow:auto}
+.toc-item{display:flex;gap:8px;align-items:baseline;text-align:left;background:transparent;border:1px solid transparent;color:var(--muted);font-size:calc(11.5px * var(--fsk));padding:5px 7px;cursor:pointer;font-family:var(--sans);line-height:1.5}
+.toc-item span{font-family:var(--mono);font-size:calc(9.5px * var(--fsk));color:var(--gold);opacity:.8;flex:0 0 auto;white-space:nowrap;text-align:right}
+.toc-item:hover{border-color:var(--line2);background:rgba(217,179,108,.05);color:var(--ink)}
+mark{background:rgba(217,179,108,.28);color:inherit;padding:0 1px}
+.empty-state{color:var(--dim);font-size:calc(13px * var(--fsk));padding:26px 4px;text-align:center;border:1px dashed var(--line2);margin-top:18px}
+/* 主题化滚动条：细、金色、透明轨道 */
+html{scrollbar-width:thin;scrollbar-color:var(--thumb) transparent}
+html::-webkit-scrollbar{width:10px}
+html::-webkit-scrollbar-track{background:var(--bg)}
+html::-webkit-scrollbar-thumb{background:var(--thumb);border-radius:5px;border:2px solid var(--bg)}
+html::-webkit-scrollbar-thumb:hover{background:var(--thumb2)}
+.srcbody,.toc-grid,.matrix-wrap,.snaptable,.topnav nav{scrollbar-width:thin;scrollbar-color:var(--thumb) transparent}
+.srcbody::-webkit-scrollbar,.toc-grid::-webkit-scrollbar,.matrix-wrap::-webkit-scrollbar,.snaptable::-webkit-scrollbar,.topnav nav::-webkit-scrollbar{width:6px;height:6px}
+.srcbody::-webkit-scrollbar-track,.toc-grid::-webkit-scrollbar-track,.matrix-wrap::-webkit-scrollbar-track,.snaptable::-webkit-scrollbar-track,.topnav nav::-webkit-scrollbar-track{background:transparent}
+.srcbody::-webkit-scrollbar-thumb,.toc-grid::-webkit-scrollbar-thumb,.matrix-wrap::-webkit-scrollbar-thumb,.snaptable::-webkit-scrollbar-thumb,.topnav nav::-webkit-scrollbar-thumb{background:var(--thumb);border-radius:3px}
+.srcbody::-webkit-scrollbar-thumb:hover,.toc-grid::-webkit-scrollbar-thumb:hover,.matrix-wrap::-webkit-scrollbar-thumb:hover,.snaptable::-webkit-scrollbar-thumb:hover{background:var(--thumb2)}
+
+/* matrix */
+.matrix-wrap{overflow-x:auto;border:1px solid var(--line2);position:relative}
+.matrix{font-size:calc(11px * var(--fsk))}
+.matrix caption{caption-side:top;text-align:left;font-size:calc(11.5px * var(--fsk));color:var(--dim);padding:10px 12px;border-bottom:1px solid var(--line2)}
+.matrix th,.matrix td{padding:7px 4px;text-align:center;border-bottom:1px solid var(--line2);border-right:1px solid rgba(255,255,255,.03)}
+.matrix thead th{font-family:var(--serif);font-size:calc(13px * var(--fsk));color:var(--gold2);background:var(--panel2);position:sticky;top:0}
+.matrix .rowhead{text-align:left;padding-left:12px;color:var(--muted);font-size:calc(11.5px * var(--fsk));white-space:nowrap;background:var(--panel);position:sticky;left:0;z-index:2;border-right:1px solid var(--line2)}
+.matrix thead .rowhead{color:var(--dim);font-family:var(--mono);font-size:calc(10px * var(--fsk));z-index:3}
+.matrix td{color:#f6ecd6;font-family:var(--mono);font-size:calc(10px * var(--fsk))}
+
+/* about */
+.about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:30px}
+@media(max-width:860px){.about-grid{grid-template-columns:1fr}}
+.filelist{font-family:var(--mono);font-size:calc(11.5px * var(--fsk));color:var(--dim);line-height:2.1;columns:2;column-gap:26px}
+.filelist span{display:block;break-inside:avoid}
+footer{border-top:1px solid var(--line2);padding:44px 34px 60px;text-align:center;color:var(--dim);font-size:calc(12px * var(--fsk))}
+@media(max-width:760px){
+  html{scroll-padding-top:calc(var(--navh,120px) + 20px)}
+  section{padding:64px 20px}
+  .topnav{flex-direction:column;align-items:stretch;padding:9px 18px 6px;gap:4px}
+  .topnav .brand{font-size:calc(14px * var(--fsk))}
+  .topnav .brand em{display:none}
+  .topnav nav{margin-left:0;flex-wrap:nowrap;overflow-x:auto;gap:16px;scrollbar-width:none;padding:2px 0 4px}
+  .topnav nav::-webkit-scrollbar{display:none}
+  .topnav nav a{font-size:calc(12px * var(--fsk));letter-spacing:.02em;white-space:nowrap}
+  .sec-head{flex-wrap:wrap;gap:8px}
+  .sec-head h2{font-size:calc(25px * var(--fsk))}
+  .sec-head .en{margin-left:0;width:100%;order:3}
+  .concept-grid{grid-template-columns:1fr}
+  .rec-grid{grid-template-columns:1fr}
+  .rec{grid-template-columns:56px 1fr;gap:12px;padding:16px}
+  .rec-letter{font-size:calc(32px * var(--fsk))}
+  .chap.wide{grid-column:span 1}
+  .hero{min-height:auto;padding:96px 20px 60px}
+  .motto{letter-spacing:.18em;text-indent:.18em}
+  .toolbar{top:var(--navh,78px)}
+  .topnav{position:relative}
+  .theme-btn{position:absolute;top:8px;right:16px}
+}
+footer .stone-mark{display:block;width:68px;margin:0 auto 14px}
+footer .stone-mark svg{width:100%;height:auto;display:block;filter:drop-shadow(0 6px 12px rgba(0,0,0,.4))}
+html[data-theme="light"] footer .stone-mark svg{filter:drop-shadow(0 4px 8px rgba(90,70,30,.18))}
+.fade{opacity:0;transform:translateY(16px);transition:opacity .7s ease,transform .7s ease}
+.fade.in{opacity:1;transform:none}
+.top{position:fixed;right:22px;bottom:22px;width:42px;height:42px;border:1px solid var(--line);background:var(--topbg);color:var(--gold);display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:0;pointer-events:none;transition:.3s;z-index:80}
+.top.show{opacity:1;pointer-events:auto}
+@media(max-width:640px){
+  .search-row{flex-wrap:wrap}
+  .search-row input{flex:1 1 100%}
+  #count,#dcount{width:100%;text-align:right;margin-top:4px}
+  .topnav nav{mask-image:linear-gradient(to right,#000 calc(100% - 26px),transparent);-webkit-mask-image:linear-gradient(to right,#000 calc(100% - 26px),transparent)}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .fade{opacity:1;transform:none;transition:none}
+  *{animation-duration:.01ms!important;transition-duration:.01ms!important}
+}
+@media print{
+  .topnav,.toolbar,.top,.theme-btn,#progress,.dlg-toc{display:none!important}
+  body{background:#fff;color:#000}
+  .hero{min-height:auto;padding:24px 0;text-align:left}
+  .hero:before,.hero:after{display:none}
+  .hero h1{font-size:calc(42px * var(--fsk));color:#1a1a1a;-webkit-text-fill-color:#1a1a1a;background:none}
+  .statbar{border-color:#ccc}
+  section{padding:24px 0}
+  .concept-grid,.rec-grid,.chap-grid,.tool-grid,.about-grid,.tool-bottom{grid-template-columns:1fr}
+  .card,.rec,.chap,.dlg,.vbody,.tool-card{border-color:#ccc;background:#fff;box-shadow:none;transform:none}
+  details.src>.srcbody{max-height:none;overflow:visible}
+  .matrix{font-size:calc(8px * var(--fsk))}
+  .matrix td{color:#000}
+  a{color:#000;text-decoration:none}
+  .fade{opacity:1;transform:none}
+}
+/* 7.0 archive additions */
+.epi{margin:10px 0 0;padding-left:10px;border-left:2px solid var(--line);color:var(--muted);font-family:var(--serif);font-style:italic;font-size:calc(12.5px * var(--fsk));line-height:1.7}
+.card .epi{margin-top:12px}
+.dsrc{display:inline-block;font-family:var(--mono);font-size:calc(9px * var(--fsk));letter-spacing:.14em;color:var(--gold);border:1px solid var(--line);padding:1px 5px;margin-right:8px;vertical-align:2px;font-weight:400}
+.dlg h4 .dsrc{color:var(--gold)}
+.dsrc-main{color:var(--muted);border-color:var(--line2)}
+.toc-vol{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;padding:14px 16px 6px;border-top:1px solid var(--line2)}
+.toc-vol:first-of-type{border-top:0;padding-top:12px}
+.toc-vol b{font-family:var(--serif);font-size:calc(13px * var(--fsk));font-weight:500;color:var(--gold2);letter-spacing:.12em}
+.toc-vol span{font-size:calc(10.5px * var(--fsk));color:var(--dim)}
+.dlg-toc[open]{max-height:72vh;overflow:auto;overscroll-behavior:contain}
+.dlg-toc[open] .toc-grid{max-height:none;overflow:visible}
+.rec-meta .order{color:var(--gold);opacity:.82}
+.toc-grid{max-height:58vh;overflow:auto;overscroll-behavior:contain}
+.dlg{content-visibility:auto;contain-intrinsic-size:auto 64px}
+.reason{margin:8px 0 2px}
+.reason summary{display:inline-block;font-size:calc(10.5px * var(--fsk));letter-spacing:.12em;color:var(--dim);border:1px solid var(--line2);padding:1px 8px;cursor:pointer;list-style:none}
+.reason summary::-webkit-details-marker{display:none}
+.reason summary:hover{color:var(--gold);border-color:var(--line)}
+.reason>div{margin-top:8px;padding:10px 12px;border-left:2px solid var(--line);color:var(--dim);font-size:calc(12px * var(--fsk));line-height:1.8;white-space:pre-wrap}
+.tool-card .epi{margin-top:8px;font-size:calc(12px * var(--fsk))}
+@media print{.epi,.dsrc{border-color:#ccc!important;color:#333!important}.dlg{content-visibility:visible}}
+
+/* ── 原文档子页 ── */
+body.sub{padding:0}
+.subnav{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:14px;flex-wrap:wrap;padding:12px clamp(14px,4vw,40px);background:var(--topbg);backdrop-filter:blur(14px);border-bottom:1px solid var(--line2);font-size:calc(12px * var(--fsk))}
+.subnav a{color:var(--body);white-space:nowrap;opacity:.9}
+.subnav a:hover{color:var(--gold)}
+.subnav .sbrand{font-family:var(--serif);font-size:calc(14px * var(--fsk));color:var(--gold2);letter-spacing:.18em;margin-right:6px}
+.subnav .ssep{color:var(--dim);opacity:.5}
+.subnav .sp{flex:1}
+.subnav .theme-btn{position:static;margin:0}
+.subwrap{max-width:900px;margin:0 auto;padding:56px 22px 110px}
+.subwrap .eyebrow{font-family:var(--mono);font-size:calc(10px * var(--fsk));letter-spacing:.3em;color:var(--gold);opacity:.85;margin:0 0 14px}
+.subtitle{font-family:var(--serif);font-size:calc(clamp(30px,5.4vw,46px) * var(--fsk));font-weight:500;line-height:1.25;color:var(--gold2);margin:0 0 14px;letter-spacing:.04em}
+.submeta{font-family:var(--mono);font-size:calc(11px * var(--fsk));color:var(--dim);line-height:2;margin:0 0 18px}
+.sublead{font-size:calc(13.5px * var(--fsk));color:var(--muted);line-height:1.95;margin:0 0 8px;max-width:720px}
+.sub-toc{display:flex;flex-wrap:wrap;gap:6px;margin:28px 0 6px;padding:14px 0;border-top:1px solid var(--line2);border-bottom:1px solid var(--line2)}
+.sub-toc a{font-size:calc(11.5px * var(--fsk));color:var(--muted);border:1px solid var(--line2);padding:4px 10px;line-height:1.6}
+.sub-toc a:hover{color:var(--gold2);border-color:var(--line)}
+.sub-ch{margin:52px 0 0}
+.subwrap section{padding:0!important;max-width:none!important;border-top:0!important}
+.sub-ch>h2{font-family:var(--serif);font-size:calc(19px * var(--fsk));font-weight:500;color:var(--gold2);margin:0 0 6px;line-height:1.5}
+.sub-ch>h2 span{font-family:var(--mono);font-size:calc(10px * var(--fsk));color:var(--gold);letter-spacing:.14em;margin-right:10px;border:1px solid var(--line);padding:1px 6px;vertical-align:2px}
+.sub-ch .sub-src{font-family:var(--mono);font-size:calc(10.5px * var(--fsk));color:var(--dim);margin:0 0 14px}
+.sub-ch .sub-src a{color:var(--gold);border-bottom:1px solid var(--line)}
+.raw pre{white-space:pre-wrap;word-break:break-word;font-family:var(--sans);font-size:calc(12px * var(--fsk));line-height:1.9;color:var(--body);background:var(--panel);border:1px solid var(--line2);padding:16px 18px;max-height:72vh;overflow:auto}
+.subfoot{margin-top:64px;padding-top:20px;border-top:1px solid var(--line2);font-size:calc(11.5px * var(--fsk));color:var(--dim);line-height:1.9}
+.subfoot a{color:var(--gold)}
+@media print{.subnav{display:none}.subwrap{padding:0}.raw pre{max-height:none}}
+/* ── A- / A+ 与主站一致 ── */
+.subnav .fs-ctrl{display:inline-flex;gap:2px;flex:0 0 auto}
+.subnav .fs-btn{background:transparent;border:1px solid var(--line2);color:var(--muted);width:30px;height:30px;padding:0;line-height:1;cursor:pointer;font-family:var(--mono);font-size:calc(11px * var(--fsk));flex:0 0 auto;transition:.2s}
+.subnav .fs-btn:hover{border-color:var(--gold);color:var(--gold2)}
+.subnav .fs-btn.on{color:var(--gold2);border-color:var(--gold);background:rgba(217,179,108,.06)}
+/* ── 顶栏字号与留白对齐主站 .topnav ── */
+.subnav{padding:14px 34px;gap:20px}
+.subnav a{font-size:calc(13px * var(--fsk));letter-spacing:.08em}
+.subnav .sbrand{font-size:calc(17px * var(--fsk));letter-spacing:.14em}
+.subnav .theme-btn{width:34px;height:34px;font-size:calc(15px * var(--fsk))}
+@media(max-width:760px){.subnav .sbrand{font-size:calc(14px * var(--fsk))}.subnav a{font-size:calc(12px * var(--fsk))}}
+@media(max-width:720px){.subnav{padding:12px 18px;gap:12px}}
+/* think-block: 现场推理 */
+.think{margin:0 0 12px;padding:10px 14px;border-left:2px solid var(--line);background:rgba(217,179,108,.035);color:var(--muted);font-size:calc(12.5px * var(--fsk));line-height:1.95;white-space:pre-wrap;word-break:break-word;border-radius:0 2px 2px 0}
+.think>span{font-family:var(--mono);font-size:9px;border:1px solid var(--line);padding:0 5px;margin-right:9px;color:var(--gold);letter-spacing:.08em;vertical-align:1px;white-space:nowrap}
+html[data-theme="light"] .think{background:rgba(138,106,47,.055);color:#5b5348;border-left-color:rgba(120,90,40,.3)}
+/* think-block: 现场推理 */
+.think{margin:0 0 12px;padding:10px 14px;border-left:2px solid var(--line);background:rgba(217,179,108,.035);color:var(--muted);font-size:calc(12.5px * var(--fsk));line-height:1.95;white-space:pre-wrap;word-break:break-word;border-radius:0 2px 2px 0}
+.think>span{font-family:var(--mono);font-size:9px;border:1px solid var(--line);padding:0 5px;margin-right:9px;color:var(--gold);letter-spacing:.08em;vertical-align:1px;white-space:nowrap}
+html[data-theme="light"] .think{background:rgba(138,106,47,.055);color:#5b5348;border-left-color:rgba(120,90,40,.3)}
+/* think-block: 现场推理 */
+.think{margin:0 0 12px;padding:10px 14px;border-left:2px solid var(--line);background:rgba(217,179,108,.035);color:var(--muted);font-size:calc(12.5px * var(--fsk));line-height:1.95;white-space:pre-wrap;word-break:break-word;border-radius:0 2px 2px 0}
+.think>span{font-family:var(--mono);font-size:9px;border:1px solid var(--line);padding:0 5px;margin-right:9px;color:var(--gold);letter-spacing:.08em;vertical-align:1px;white-space:nowrap}
+html[data-theme="light"] .think{background:rgba(138,106,47,.055);color:#5b5348;border-left-color:rgba(120,90,40,.3)}
+/* think-block: 现场推理 */
+.think{margin:0 0 12px;padding:10px 14px;border-left:2px solid var(--line);background:rgba(217,179,108,.035);color:var(--muted);font-size:calc(12.5px * var(--fsk));line-height:1.95;white-space:pre-wrap;word-break:break-word;border-radius:0 2px 2px 0}
+.think>span{font-family:var(--mono);font-size:9px;border:1px solid var(--line);padding:0 5px;margin-right:9px;color:var(--gold);letter-spacing:.08em;vertical-align:1px;white-space:nowrap}
+html[data-theme="light"] .think{background:rgba(138,106,47,.055);color:#5b5348;border-left-color:rgba(120,90,40,.3)}
+/* think-block: 现场推理 */
+.think{margin:0 0 12px;padding:10px 14px;border-left:2px solid var(--line);background:rgba(217,179,108,.035);color:var(--muted);font-size:calc(12.5px * var(--fsk));line-height:1.95;white-space:pre-wrap;word-break:break-word;border-radius:0 2px 2px 0}
+.think>span{font-family:var(--mono);font-size:9px;border:1px solid var(--line);padding:0 5px;margin-right:9px;color:var(--gold);letter-spacing:.08em;vertical-align:1px;white-space:nowrap}
+html[data-theme="light"] .think{background:rgba(138,106,47,.055);color:#5b5348;border-left-color:rgba(120,90,40,.3)}
+/* think-block: 现场推理 */
+.think{margin:0 0 12px;padding:10px 14px;border-left:2px solid var(--line);background:rgba(217,179,108,.035);color:var(--muted);font-size:calc(12.5px * var(--fsk));line-height:1.95;white-space:pre-wrap;word-break:break-word;border-radius:0 2px 2px 0}
+.think>span{font-family:var(--mono);font-size:9px;border:1px solid var(--line);padding:0 5px;margin-right:9px;color:var(--gold);letter-spacing:.08em;vertical-align:1px;white-space:nowrap}
+html[data-theme="light"] .think{background:rgba(138,106,47,.055);color:#5b5348;border-left-color:rgba(120,90,40,.3)}
+/* think-block: 现场推理 */
+.think{margin:0 0 12px;padding:10px 14px;border-left:2px solid var(--line);background:rgba(217,179,108,.035);color:var(--muted);font-size:calc(12.5px * var(--fsk));line-height:1.95;white-space:pre-wrap;word-break:break-word;border-radius:0 2px 2px 0}
+.think>span{font-family:var(--mono);font-size:9px;border:1px solid var(--line);padding:0 5px;margin-right:9px;color:var(--gold);letter-spacing:.08em;vertical-align:1px;white-space:nowrap}
+html[data-theme="light"] .think{background:rgba(138,106,47,.055);color:#5b5348;border-left-color:rgba(120,90,40,.3)}
+/* think-block: 现场推理 */
+.think{margin:0 0 12px;padding:10px 14px;border-left:2px solid var(--line);background:rgba(217,179,108,.035);color:var(--muted);font-size:calc(12.5px * var(--fsk));line-height:1.95;white-space:pre-wrap;word-break:break-word;border-radius:0 2px 2px 0}
+.think>span{font-family:var(--mono);font-size:9px;border:1px solid var(--line);padding:0 5px;margin-right:9px;color:var(--gold);letter-spacing:.08em;vertical-align:1px;white-space:nowrap}
+html[data-theme="light"] .think{background:rgba(138,106,47,.055);color:#5b5348;border-left-color:rgba(120,90,40,.3)}
+/* think-block: 现场推理 */
+.think{margin:0 0 12px;padding:10px 14px;border-left:2px solid var(--line);background:rgba(217,179,108,.035);color:var(--muted);font-size:calc(12.5px * var(--fsk));line-height:1.95;white-space:pre-wrap;word-break:break-word;border-radius:0 2px 2px 0}
+.think>span{font-family:var(--mono);font-size:9px;border:1px solid var(--line);padding:0 5px;margin-right:9px;color:var(--gold);letter-spacing:.08em;vertical-align:1px;white-space:nowrap}
+html[data-theme="light"] .think{background:rgba(138,106,47,.055);color:#5b5348;border-left-color:rgba(120,90,40,.3)}
+/* think-block: 现场推理 */
+.think{margin:0 0 12px;padding:10px 14px;border-left:2px solid var(--line);background:rgba(217,179,108,.035);color:var(--muted);font-size:calc(12.5px * var(--fsk));line-height:1.95;white-space:pre-wrap;word-break:break-word;border-radius:0 2px 2px 0}
+.think>span{font-family:var(--mono);font-size:9px;border:1px solid var(--line);padding:0 5px;margin-right:9px;color:var(--gold);letter-spacing:.08em;vertical-align:1px;white-space:nowrap}
+html[data-theme="light"] .think{background:rgba(138,106,47,.055);color:#5b5348;border-left-color:rgba(120,90,40,.3)}
+/* think-block: 现场推理 */
+.think{margin:0 0 12px;padding:10px 14px;border-left:2px solid var(--line);background:rgba(217,179,108,.035);color:var(--muted);font-size:calc(12.5px * var(--fsk));line-height:1.95;white-space:pre-wrap;word-break:break-word;border-radius:0 2px 2px 0}
+.think>span{font-family:var(--mono);font-size:9px;border:1px solid var(--line);padding:0 5px;margin-right:9px;color:var(--gold);letter-spacing:.08em;vertical-align:1px;white-space:nowrap}
+html[data-theme="light"] .think{background:rgba(138,106,47,.055);color:#5b5348;border-left-color:rgba(120,90,40,.3)}
+/* think-block: 现场推理 */
+.think{margin:0 0 12px;padding:10px 14px;border-left:2px solid var(--line);background:rgba(217,179,108,.035);color:var(--muted);font-size:calc(12.5px * var(--fsk));line-height:1.95;white-space:pre-wrap;word-break:break-word;border-radius:0 2px 2px 0}
+.think>span{font-family:var(--mono);font-size:9px;border:1px solid var(--line);padding:0 5px;margin-right:9px;color:var(--gold);letter-spacing:.08em;vertical-align:1px;white-space:nowrap}
+html[data-theme="light"] .think{background:rgba(138,106,47,.055);color:#5b5348;border-left-color:rgba(120,90,40,.3)}
+/* think-block: 现场推理 */
+.think{margin:0 0 12px;padding:10px 14px;border-left:2px solid var(--line);background:rgba(217,179,108,.035);color:var(--muted);font-size:calc(12.5px * var(--fsk));line-height:1.95;white-space:pre-wrap;word-break:break-word;border-radius:0 2px 2px 0}
+.think>span{font-family:var(--mono);font-size:9px;border:1px solid var(--line);padding:0 5px;margin-right:9px;color:var(--gold);letter-spacing:.08em;vertical-align:1px;white-space:nowrap}
+html[data-theme="light"] .think{background:rgba(138,106,47,.055);color:#5b5348;border-left-color:rgba(120,90,40,.3)}
+/* think-block: 现场推理 */
+.think{margin:0 0 12px;padding:10px 14px;border-left:2px solid var(--line);background:rgba(217,179,108,.035);color:var(--muted);font-size:calc(12.5px * var(--fsk));line-height:1.95;white-space:pre-wrap;word-break:break-word;border-radius:0 2px 2px 0}
+.think>span{font-family:var(--mono);font-size:9px;border:1px solid var(--line);padding:0 5px;margin-right:9px;color:var(--gold);letter-spacing:.08em;vertical-align:1px;white-space:nowrap}
+html[data-theme="light"] .think{background:rgba(138,106,47,.055);color:#5b5348;border-left-color:rgba(120,90,40,.3)}
+/* think-block: 现场推理 */
+.think{margin:0 0 12px;padding:10px 14px;border-left:2px solid var(--line);background:rgba(217,179,108,.035);color:var(--muted);font-size:calc(12.5px * var(--fsk));line-height:1.95;white-space:pre-wrap;word-break:break-word;border-radius:0 2px 2px 0}
+.think>span{font-family:var(--mono);font-size:9px;border:1px solid var(--line);padding:0 5px;margin-right:9px;color:var(--gold);letter-spacing:.08em;vertical-align:1px;white-space:nowrap}
+html[data-theme="light"] .think{background:rgba(138,106,47,.055);color:#5b5348;border-left-color:rgba(120,90,40,.3)}
+/* think-block: 现场推理 */
+.think{margin:0 0 12px;padding:10px 14px;border-left:2px solid var(--line);background:rgba(217,179,108,.035);color:var(--muted);font-size:calc(12.5px * var(--fsk));line-height:1.95;white-space:pre-wrap;word-break:break-word;border-radius:0 2px 2px 0}
+.think>span{font-family:var(--mono);font-size:9px;border:1px solid var(--line);padding:0 5px;margin-right:9px;color:var(--gold);letter-spacing:.08em;vertical-align:1px;white-space:nowrap}
+html[data-theme="light"] .think{background:rgba(138,106,47,.055);color:#5b5348;border-left-color:rgba(120,90,40,.3)}
+</style>
+</head>
+<body class="sub">
+<header class="subnav">
+  <span class="sbrand">剧场主义 · 原文档</span>
+  <a href="../index.html">← 返回档案馆</a><span class="ssep">·</span><a href="../records/index.html">记录档案</a><span class="ssep">·</span><a href="../sources/index.html">原始文件</a><span class="ssep">·</span><a href="nu.html">‹ ν 上一份</a><span class="ssep">·</span><a href="omicron.html">ο 下一份 ›</a>
+  <span class="sp"></span>
+  <span class="fs-ctrl"><button class="fs-btn" data-fs="small" type="button" aria-label="缩小字号" title="缩小字号">A-</button><button class="fs-btn" data-fs="large" type="button" aria-label="放大字号" title="放大字号">A+</button></span>
+  <button class="theme-btn" id="theme" type="button" aria-label="切换阅读模式" title="切换阅读模式（浅色 / 暗色）">☾</button>
+</header>
+<main class="subwrap">
+  <p class="eyebrow">SOURCE DOCUMENT · 时间顺序第 13 份 · xi</p>
+  <h1 class="subtitle">ξ · 冗余审计</h1>
+  <p class="submeta">剧场主义xi.txt · 20,467 字符 · 收录 3 组问答 · 拆分为 1 章 · 主档案源流卷 二十八—二十八章</p>
+  <p class="sublead">本页是工作日志的原文档子页：按「问 · 思 · 答」三段保留原文——问是当时的提问，思是回答前的现场推理（原文留存的部分），答是正式回答。原始记录没有留下推理的轮次，只有问与答。主档案对话录里的源流卷，是去掉「思」、只留问答的可读版本。</p>
+  <nav class="sub-toc"><a href="#ch-1">第二十八章</a></nav>
+  <section class="sub-ch" id="ch-1">
+  <h2><span>源流 · 第二十八章</span>ξ · 冗余审计</h2>
+
+  <div class="qa"><p class="q"><span>问</span>分析冗余</p>
+              <div class="think"><span>思</span>好的，用户上传了一份名为《剧场主义3.5》的长篇哲学文档，要求“分析冗余”。用户可能是在研究或实践这套理论时感到内容繁复，希望识别出哪些部分在结构上不必要或功能重叠，从而更精准地把握核心。<br><br>我需要先快速理解这套理论的核心主张。它是一套实践哲学，强调个体是自身意义世界的主权者，核心操作是“在场建构，界限捍卫”。文档结构庞大，包含本体论、认识论、伦理、实践等二十多个章节。<br><br>用户要求“分析冗余”，这需要我从理论内在逻辑出发，评估各部分的功能性和必要性。不能简单说“这部分太长”，而要分析：这个内容是否提供了新信息？是否在结构上重复？是否可由核心命题自然导出？<br><br>我需要建立一个分析框架。可以从几个维度切入：首先看本体论部分，比如“双重存在”“基底意识流”“意义皮肤”这些概念之间是否边界清晰，有无重叠。其次看实践工具部分，各种可选模块如“摩擦热力学”“反抗税”等，是否只是同一操作的不同比喻。再看那些“全可选”标记的模块，它们是否是核心骨架的自然延伸，还是可以安全剥离的皮肤。<br><br>分析时要特别注意作者的声明，比如“不增设任何高于主权理性的规范”，这为冗余判断提供了内部标准。任何试图替主权者作价值排序或添加伦理义务的扩充，都可能构成结构性冗余。<br><br>最终分析应指出哪些是结构性臃肿、功能重叠或可剥离的皮肤，并点明维持理论生态张力的必要冗余何在。这就像在帮用户拆解一台精密机器，找出哪些零件是真核心，哪些是可选配件。<br><br>好的，我们来对《剧场主义3.5》这份文档进行冗余分析。<br><br>首先需要明确，对于一个刻意追求体系完备、并通过对话迭代“生长”出的理论，“冗余”的判定标准不是“是否重复”，而是“这个部分是否增加了新的信息、操作维度或结构必要性？还是仅仅对已有内容进行修辞上的变奏或情绪上的加固？”<br><br>基于这个标准，我将文档内容分为三类进行分析：<br><br>第一类：结构性冗余与概念重叠<br>这部分内容的多个概念在功能上高度重叠，可以被更基础的操作所吸收，移除它们不会损害理论的完整性，反而会使其更锋利。<br><br>三级意义模型（剧目-舞台-地板）与“舞台”概念的冗余<br><br>分析：“剧目”（具体选择）和“地板”（终极锚点）是清晰且必要的操作概念。然而，“舞台”作为“意识场域本身”，是一个描述性而非操作性的概念。它绝大部分的功能可以被“存在₂的建构层”完全取代。在“哲学三问”（我在哪？）中，“我在我的意义世界里”就足够了，不需要再细分“是在舞台还是建构层”。保留“舞台”更多是为了维系“剧场”这一核心隐喻的美学完整性，而非理论必需。<br><br>意义皮肤、反抗税、哨兵-篡位者模型、摩擦热力学——多重防御描述体系的重叠<br><br>分析：这是整个理论中最显著的冗余地带。为了描述“边界被触碰或侵入时的内部体验与能耗”，理论并行使用了四套语言：<br><br>意义皮肤：用触觉/厚薄来描述敏感度。<br><br>反抗税：用经济学术语描述持续对抗的能耗。<br><br>哨兵-篡位者：用政治/军事术语描述情绪（恐惧、愤怒）的角色。<br><br>摩擦热力学：用物理学的温度来描述互动的紧张程度。</div><p class="a">这些概念都是对同一现象的不同比喻，它们的功能高度重叠。例如，“皮肤维护成本”就是“反抗税”的一部分；“中热摩擦”的感觉几乎等同于“皮肤被轻微触碰”。对于使用者而言，掌握一个核心概念（如“边界觉察与维护成本”）比掌握四个近义术语更有效。这套复杂描述体系是理论“工具箱”过于臃肿的典型表现。</p><p class="a">零裁决状态与策略性悬置的模糊边界</p><p class="a">分析：“零裁决状态”被定义为裁决能力被外部力量彻底剥夺。而“策略性悬置”是主权者主动退居观众席。但在极限生理匮乏或严重精神困扰的描述中，两者的界限是模糊的：一个因饥寒交迫而无法进行意义建构的人，他“裁决让本能代理”这个动作，究竟是主权尚存的“策略性悬置”，还是主权已失的“零裁决状态”？这个微弱的区分在实践指导上意义不大，因为两者的应对方案（保存自身、等待恢复）是完全一致的。将“零裁决状态”视为一种极端的、主权暂时无法行使的特殊状态即可，不必单列为一个全新的存在论范畴。</p><p class="a">集体共构、仲裁元规则等高度情境化的模块</p><p class="a">分析：“仲裁元规则”是为“两个剧场主义者死锁”这一极罕见情境设计的，它完全可以被更基础的“裁决校准程序”和“主权共构协议”的撤回条款所覆盖。“集体共构模型”、“日常经济裁定”等，并非新的理论构件，只是将主权裁决、效能计算等基础操作应用到社会、经济领域，属于应用案例而非必要模块。它们的核心思想在更基础的章节中已经阐明。</p><p class="a">第二类：功能性重复这部分内容功能相近，可以整合以简化选择。</p><p class="a">终末路径与离开原因的镜像</p><p class="a">分析：“六条终末路径”（如加固城墙、娱乐至死）描绘了理论实践可能走向的长期结局。“离开理论的六种原因”（如意义饱和、能耗超收益）解释了为何会放弃这套工具。它们是一枚硬币的两面，加固城墙的终点可能就是意义饱和，娱乐至死的状态就是意义场的转移。将这两者整合，统一描述为“理论的演化与退出”，会使结构更清晰。</p><p class="a">4.7失败与经验汲取 与 4.2反认知循环的部分重叠</p><p class="a">分析：“失败与经验汲取”中描述的“接取-裁决-拆解-转化-内化”过程，其核心就是“反认知循环”（向外投射-主权回收-选择性内化）在面对负面反馈时的具体应用。虽然对正常化装置在“失败”上的叙事压迫分析很有价值，但整个流程机制可以视为反认知循环的一个特殊案例，不必平行展开为一个同等权重的章节。</p><p class="a">第三类：必要的美学/情绪冗余与生态位这部分虽有冗余之嫌，但在理论生态中扮演着特定角色，不应被“精简”掉。</p><p class="a">辞藻、隐喻与标记物（石头）</p><p class="a">分析：“地板”不如“弯腰捡石头”有力量。同样的理论内核，用更感性的语言表达，是理论的“皮肤”本身。尤其“石头”这个标记物，它贯穿理论，是连接抽象概念与具体身体动作的桥梁，降低了认知门槛，提供了情感锚点。这是它区别于纯粹冷冰冰的分析哲学的关键。没有它，理论就失去了温度。</p><p class="a">情绪谱系的独立详述</p><p class="a">分析：将愤怒、仇恨、嫉妒、羡慕等情绪单独成章，深入剖析其起源、与裁决的关系、篡位风险等，虽然在结构上可以归入“认识论”的裁决部分，但这种详细铺陈是必要的。因为它直接回应了使用者在具体情境中的痛点（“我很愤怒/嫉妒，我该怎么办？”），这是理论提供“地图”的核心方式。将恐惧/审美提升为“建构双驱力”，将爱描述为“极致共构”，这些都是理论的核心创新，不是冗余。</p><p class="a">“你已看见”的压强与理论的终结</p><p class="a">分析：这两个章节涉及理论的元层次，即理论如何自我审视其权力和结局。这不是知识点的重复，而是理论自反性和诚实性的体现，是其区别于教条的核心装置，属于性质完全不同的必要内容。</p><p class="a">总结：如何化繁为简如果用一句话概括冗余的核心，那就是：太多精妙的比喻被赋予了概念的地位。</p><p class="a">可以安全剥离/整合的冗余：</p><p class="a">概念合并：将“舞台”融入“建构层”；将“意义皮肤”、“反抗税”、“摩擦热力学”整合为一个统一的概念体系（如“边界动力学”），描述其感知、维护成本及互动温度。</p><p class="a">情景应用简化：将“仲裁元规则”视为“裁决校准程序”的注脚；将“集体共构”、“日常经济裁定”等视为基础操作的应用案例，而非独立模块。</p><p class="a">镜像章节合并：将“终末路径”和“离开原因”合并，统一描述理论与实践的关系演化与终结。</p><p class="a">必须保留的“冗余”：</p><p class="a">以“石头”为核心的整个辞藻与隐喻系统。</p><p class="a">情绪谱系（恐惧、愤怒、嫉妒、羡慕、爱）的细致剖析。</p><p class="a">理论自反性相关章节（公理可裁决性、你已看见、理论的终结）。</p><p class="a">做了这样的“手术”后，《剧场主义》的骨架将是：坚定的虚无主义前提 -&gt; 主权者与裁决的核心操作 -&gt; 用于自我审视与捍卫的简明工具包（反认知循环、裁决校准、语义裁决） -&gt;对关键存在体验（情绪、爱、死亡）的深度现象学描述 -&gt; 理论的自我退出机制。</p><p class="a">这将使其从一个庞大到令人望而生畏的体系，变成一个更为锋利、轻便、同样有力且更具操作性的个人实践哲学。</p></div><div class="qa"><p class="q"><span>问</span>进行，完整输出</p>
+              <div class="think"><span>思</span>好的，用户要求“进行，完整输出”。结合对话历史来看，用户之前上传了《剧场主义3.5》的完整文档，然后我给出了一份详细的“冗余分析”。现在用户说“进行”，显然是希望我完成那个分析——即，对我提出的精简方案进行“完整输出”，也就是基于那份分析，实际动手改写出一个理论的新版本。<br><br>嗯，用户可能是一位深度参与这个理论建构的对话者，甚至可能是该理论的共创者。他的真实需求不仅仅是得到一个分析报告，而是希望看到理论被实际精简后的样子，一个可以直接使用或继续迭代的“干净”版本。深层需求可能是：这个体系太庞大了，他想看到一个更锋利、更易用的版本，验证精简的可行性。<br><br>回顾我之前提出的分析，核心是合并冗余概念、精简结构、但保留必要的美学和自反性。用户没有反驳我的分析，而是让我“进行”，说明他认可了精简方向。那么，我的任务就是执行这个“手术”。<br><br>我需要思考如何构建这个精简版。首先，必须保留理论的核心骨架：三条公理、主权裁决、反认知循环等操作工具。其次，要果断执行合并：将“舞台”概念融入“存在₂”；将“意义皮肤”、“反抗税”、“摩擦热力学”整合为一个“边界动力学”的成熟概念。那些高度情境化的模块，如“仲裁元规则”，可以作为注脚或省略。第三，必须保留那些有生命力的“冗余”：石头这个标记物，对恐惧、愤怒、爱等情绪的深度描述，以及理论自反性的章节（如“你已看见”、“理论的终结”）。这些是理论的温度和诚实所在，不能丢。<br><br>在结构上，我需要重新组织。可以从哲学前提和本体论开始，然后进入核心操作（认识论、伦理学、实践论），再展开对关键体验（情绪、时间、爱、死亡）的描述，最后以理论的自我审视和退出机制结尾。对话录部分也需要大幅精简，只保留最核心、最能说明操作的章节。<br><br>整个改写过程，语言风格需要保持原理论的冷静、精确和隐喻力量，但表述要更凝练。最终交付的不仅仅是删减版，而是一个逻辑更连贯、操作更清晰、但同样深刻和完整的升级版本。用户要的“完整输出”，应该就是这个面貌一新的《剧场主义》核心纲要。<br><br>好的，我们开始进行《剧场主义》的精简重构。如同对一个精密但臃肿的机械进行翻新，我们的目标不是拆除它，而是让它运转得更轻、更直接。</div><p class="a">以下是《剧场主义·核心纲要》。它并非删减版，而是理论的自然演化物——在保留其全部内核、力量与温度的前提下，将反复的隐喻精炼为锋利的工具。</p><p class="a">剧场主义·核心纲要定位：一个以虚无主义为地基，以主权裁决为轴心，以边界捍卫与审美建构为驱动的，自带退出机制的，非教条的个人实践哲学。</p><p class="a">一、基础：虚无、主权与他人公理一：无意义公理世界是沉默的质料，不提供先验的意义、价值或目的。这是地基，不是牢笼。</p><p class="a">公理二：意识中心公理意义仅在个体意识中生成。你的意识是你意义世界的唯一生成原点与不可上诉的最高裁决权威。你的世界，在你之内。</p><p class="a">公理三：他者独立性公理他者是与你对等的另一个意识中心，其意图不可彻底洞悉，构成你意义世界最根本的不确定性来源。</p><p class="a">此三条公理是理论的“承重墙”。你可以拆掉它们，但你必须知道自己站在何处。</p><p class="a">二、本体论：世界与你双重存在</p><p class="a">存在₁（物质世界）：包括你的身体、物理规律在内的沉默质料。它不携带意义，但它提供不可商量的硬约束（疼痛、疲劳、死亡）。</p><p class="a">存在₂（意义世界）：被你的意识裁决并赋予意义的世界。这里是你唯一的舞台，你的意义之地板。裁决、审美、边界、爱恨皆发生于此。</p><p class="a">身体：舞台的基座身体是你同时存在于两个世界的锚点。在存在₁中，它是物理实体；在存在₂中，它是你所有体验的底流（基底意识流）的直接出口。你是你的身体，你无法离开它来建构意义。</p><p class="a">基底意识流 vs. 建构层</p><p class="a">基底意识流：意识在未主动赋形时的持续流淌。晃腿、零碎念头、无目的的身体冲动。它是你存在的默认状态。</p><p class="a">建构层：你主动裁决、赋形、建构意义的区域。所有的剧目、地板、捍卫行为均发生于此。建构可以暂停，意识流不会。</p><p class="a">三、核心操作：裁决、地板与反认知循环裁决：你存在的在场证明裁决是主权者的根本动作，是回答“意义与否、由谁说了算”。它先于判断（是什么）和决定（做什么）。裁决就是你，不可委托，不可让渡。主权不在场的裁决惯性，是迷失的开始。</p><p class="a">地板：不可再追问的行动锚点地板是你的“终极解释止步之处”。当你说“因为我想，就做了”时，你就在设立地板。</p><p class="a">审美驱动（正极）：行动本身就是好的，因为它的质感，因为它让你感觉“就该是这样”。</p><p class="a">恐惧驱动（负极）：行动是为了锚定自身，对抗虚无与他者入侵的锚点。你弯腰捡起一块石头，不为任何理由——这就是你的地板。你可以没有剧目，但不能没有地板。在最低谷，继续呼吸，就是最基底的地板。</p><p class="a">反认知循环：自我迭代的核心引擎这是你吸收外部信息而不被其俘获的基本操作：认领 → 裁决 → 筛选/排斥</p><p class="a">认领：承认并接收外部评价、失败、反馈，作为材料。裁决：将其放在你的主权域内，由你裁定它是什么——是事实？是他者的建构？还是正常化装置的渗透？筛选/排斥：吻合你建构方向的，内化吸收，优化自身；不吻合的，作为“他者的东西”存档或直接排斥。此循环的每一次运作，都反向重写并定义着你的自我。四、边界伦理：识别与捍卫基座伦理：不首先干涉我恪守不主动侵入他者边界的戒律。这不是道德，是降低系统性摩擦的理性策略。</p><p class="a">规范分类体系：识别是谁在说话</p><p class="a">法律：存在₁中附加强制力的规则。是效能计算的对象，绝对遵从不等于效忠。</p><p class="a">正常化装置：将“多数/特定标准”伪装成“自然/正常”的他者建构。它最大的危害是让你在被外界评判前，就已完成了自我否定。识别它的伪“是”，是你日常最重要的防御。</p><p class="a">劝解/说教/灌输：识别他者话语是否想替代你的裁决。若只是提供材料（劝解），则可进入你的反认知循环；若试图替代你（说教、灌输），则是你划界与回击的信号。</p><p class="a">边界动力学：感知、成本与温度</p><p class="a">边界感知：你拥有感知他者接近你边界的触觉。</p><p class="a">反抗税：当你持续作出与主流正常化装置相悖的裁决时，必须支付的、额外的认知、情感与关系成本。承认这笔税的存在，是为了不将它的沉重归咎于自己的软弱。</p><p class="a">摩擦热力学：在与他者共构时，用“温度”模型（低热、中热、高热）来识别互动状态。在高热侵入前，执行单方降温（“我停一下”、“我先离开”），是主权者保护共构不被烧毁的核心技术。</p><p class="a">五、情绪谱系：你的哨兵与燃料情绪不是你的敌人，是需要被你识别、编排、裁决的内部力量。</p><p class="a">恐惧：贯穿所有层级的基线情绪。</p><p class="a">燃料：恐惧虚无，所以建构；恐惧入侵，所以捍卫。</p><p class="a">哨兵：拉响“可能入侵”的警报。无权扣扳机。</p><p class="a">终极对象：死亡恐惧，转化为“向死而生”的建构动力。</p><p class="a">愤怒：边界被穿透时的即时灼烧感。哨兵吹号后第一个站起来的士兵。速度和强度是其优势，也可能因此迅速篡位，在裁决前就替你做出回击。你的操作是：在完全行动前，多喘一口气。</p><p class="a">嫉妒与羡慕：对差距的裁决。</p><p class="a">嫉妒：指向自身的灼烧感。“他拥有X，我以此为不足”。是重要的内部信号，告诉你你在乎什么。</p><p class="a">羡慕：不带敌意的审美裁决。“他拥有X，很好。我没有，这只是事实”。</p><p class="a">审美：与恐惧并列的建构驱力。不是“怕什么”，而是某个行动本身的质感“值得被重复”。是你在墙内跳舞，不顾观众的原因。</p><p class="a">六、极限体验的地图：爱、时间与死亡爱：主权共构的极致形态爱是两个主权者在承认随时可撤回的前提下，每一天都做出裁决，将对方的存在纳入自己意义世界核心的行动。不是承诺，是日复一日的在场裁决。其残酷的诚实在于：你随时可以走，他也一样。而你们今天依然选择留下。</p><p class="a">时间：存在的质感你的时间由裁决的密度和建构的节奏定义，而非钟表。恐惧将时间压缩，审美将时间展开。在创伤中，时间被扭曲，过去被冻结在当下。你的每一步裁决，都在定义你的时间感。</p><p class="a">死亡：舞台的边界死亡是无法被裁决取消的终极硬约束。它不赋予你意义，是你的裁决赋予了生命意义，而死亡只是告知你这个进程不会无限持续。理论只区分决断的死（主权在场，我演够了）与沉没的死（主权被淹没，我演不下去了）。它不劝生，也不赞死，只要求你确认自己的裁决是否在场。</p><p class="a">七、核心实践：自我技术裁决校准三问（在裁决“干涉”或重要行动前）：</p><p class="a">可逆性问：此回击会摧毁我未来所需的联结通道吗？</p><p class="a">可普遍化问：如果所有人都如此裁决，世界会崩溃吗？</p><p class="a">时间延宕问：二十四小时后复判，裁决会更准确吗？</p><p class="a">主权审计：在固定间隔，自问：“我此刻的行为，是我当下的裁决，还是过去裁决的惯性？”这是你的唤醒闹钟。</p><p class="a">语义裁决：拆解词汇背后隐藏的他者裁决，尤其是正常化装置将“应该”伪装成“是”的操作。收回你对语言的定义权。</p><p class="a">容留：在后台松弛时，允许基底意识流自由淌过而不予裁决、不予赋形。这是一种非裁决的接受，是精神世界的必要泄压。</p><p class="a">八、理论的终结与你的去向在你面前，是平等展开的终末路径：你可以内化一切不再需要术语（褪去外壳），可以精疲力竭后放下武器（丢掉堡垒），也可以清醒地娱乐至死。理论不规定你的目的地，它只提出它自己也必将走向的结局：被你裁决为无用，然后被放下。</p><p class="a">理论是一只筏子，在渡过虚无之河后，应该被留在岸边。</p><p class="a">石头还在。弯腰捡起它，这个动作本身，不需要任何理论。如需要，它就是你的地板。不需要，它就是河床上的一块石头。</p><p class="a">理解，思考，迭代。</p></div><div class="qa"><p class="q"><span>问</span>把这些整合进完整的文档中</p>
+              <div class="think"><span>思</span>好的，用户这次的要求是“把这些整合进完整的文档中”。结合对话历史来看，用户之前上传了一个非常庞大、结构复杂的《剧场主义3.5》文档，然后我刚刚对它进行了一次全面的冗余分析，并在此基础上提供了一个大幅精简重组的《剧场主义·核心纲要》。<br><br>嗯，用户现在指的“这些”，很可能就是我刚刚输出的那个精简后的“核心纲要”。他的深层需求，并不是要我再分析一遍，也不是要一个独立的“精简版”，而是希望我能把这个更清晰、更锋利的核心纲要，反向“安装”回原有的、那个臃肿的完整文档结构中去。</div><p class="a">剧场主义·核心纲要（3.5精简版）版本说明：此版本为3.5完整版的结构性精简重构。保留全部核心内核与力量，将复杂隐喻体系凝练为锋利的操作工具。所有新增内容均为全可选模块或概念补充，不增设任何高于主权理性的规范。</p><p class="a">核心命题：在场建构，界限捍卫。</p><p class="a">哲学范畴：实践哲学、生存哲学、伦理个人主义</p><p class="a">关键概念：主权理性、本真决断、程序性回击、地板、反认知循环、基底意识流、正常化装置、反抗税、主权共构、爱</p><p class="a">目次哲学前提：三大公理</p><p class="a">本体论：双重存在与身体</p><p class="a">核心操作：裁决、地板与反认知循环</p><p class="a">边界伦理：识别与捍卫</p><p class="a">情绪谱系：恐惧、审美、愤怒、嫉妒与羡慕</p><p class="a">极限体验：爱、时间、死亡</p><p class="a">核心实践：自我技术</p><p class="a">终末路径与理论的终结</p><p class="a">一、哲学前提：三大公理剧场主义的全部理论建构基于以下三条公理：</p><p class="a">公理一：无意义公理</p><p class="a">世界是沉默的质料，不提供先验的价值、目的或人生剧本。此公理将剧场主义置于虚无主义的起点之上。</p><p class="a">公理二：意识中心公理</p><p class="a">意义仅在个体的意识中生成并生效。个体的意识是其全部经验与价值世界的先验发生器和不可还原的基点。对个体而言，意识是意义性存在的先验条件——若无此意识，则属于“你”的世界随之湮灭。个体是其意义世界的唯一主权者。</p><p class="a">公理三：他者独立性公理</p><p class="a">他者是另一独立意识中心，其意图不可完全洞悉，构成天然的不可预测性。此公理承认多个意义世界的平行共存，为间隔性共在的伦理提供了基础。</p><p class="a">三大公理之间的张力：公理一与公理二之间存在描述视角的差异——从外部看，意识是世界内部的物理过程；从内部看，意识是一切意义的前置条件。公理二与公理三之间存在结构性张力——多个“唯一主权者”的并存必然产生无法由更高裁判所裁决的冲突。这些张力不是逻辑矛盾，而是剧场主义对存在基本结构的诚实承受。</p><p class="a">公理的可裁决性：三条公理在剧场主义中被列为前提，但其自身的性质需要被审视：公理本身是“描述”还是“裁决”？如果“世界无先天意义”是一个主权者的裁决，它如何在逻辑上作为所有其他裁决的前提？主权者保留对三条公理本身执行主权审计的权利——包括裁决“这些公理不再成立”。任何一条公理被弃用，理论的地基随之改变，但弃用本身仍是主权在场的合法裁决。理论不要求公理被信仰，只标记：这是当前建筑的承重墙。你可以拆它，但你要知道你拆的是什么，以及拆完之后你站在哪里。</p><p class="a">二、本体论：双重存在与身体2.1 双重存在剧场主义区分两种“存在”概念：</p><p class="a">存在₁（物质性存在）：物理世界、身体、大脑。剧场主义承认其在时序上先于个体意识，但视其为无意义质料。物质世界是沉默的，不携带价值或目的。</p><p class="a">存在₂（意义性存在）：被意识赋予意义后的个体世界。剧场主义主张，对个体而言，意识是意义性存在的先验条件。意义并非被发现，而是被生成。</p><p class="a">两者各自拥有不被对方覆盖的领域。存在₁是一片浩瀚的、沉默的质料之海，只有极少数被某个意识中心赋予意义后才进入存在₂。存在₂中的裁决、判断、审美对象等在存在₁中没有对应物，但在存在₂中真实存在。</p><p class="a">2.2 身体：舞台的物质基座身体在双重存在中占据一个独一无二的位置。它同时属于两个存在层面。</p><p class="a">在存在₁中，身体是物理实体——肌肉、神经、器官。它是最亲近存在₂的那一部分物质世界，是不可被裁决取消的硬约束。疲劳不可被裁决消除，疼痛不可被裁决否定，疾病不可被裁决豁免。主权者不是在身体之上建构，而是在身体之内建构。</p><p class="a">在存在₂中，身体是基底意识流的主要输出口。晃腿、哼无调歌、眼神失焦的晃动——这些无意义动作是基底意识流通过身体的自然泄漏。</p><p class="a">身体因此被定义为舞台的物质基座。它不可被裁决取消，但可以被裁决编排、承受或悬置。主权者不是“拥有”一个身体——主权者“是”这个身体在意义世界中的在场方式。</p><p class="a">2.3 存在₂的内部分层存在₂内部存在两个状态层：</p><p class="a">基底意识流：意识在未进行赋形操作时仍在持续流动的底层。它包含碎片化的意象、无指向的情绪波动、不构成判断的念头闪过、无目的的身体冲动信号。它不是无意识——它是可被意识到的，但它未被意识组织。基底意识流是存在₂的默认状态，只要意识还在运转，它就持续流动。</p><p class="a">建构层：意识主动赋形的区域。剧目、地板、反认知循环全部发生在这里。建构层是在基底意识流之上被主权裁决临时激活的赋形操作。建构层可以被暂停，基底意识流不能。</p><p class="a">三、核心操作：裁决、地板与反认知循环3.1 裁决：你存在的在场证明裁决是划定意义边界并确认主权者身份的根本动作。它回答“这由谁说了算”。</p><p class="a">裁决先于判断和决定——不是先判断“这是干涉”然后裁决“要回击”，而是先裁决“我有权判定什么进入我的域”，然后判断“进来的是干涉还是劝解”，然后决定“回击还是存档”。</p><p class="a">裁决是唯一不可委托的动作——你可以委托他人替你判断或决定，但你无法委托他人替你裁决。裁决就是你的存在方式。</p><p class="a">主权不在场时，有三种状态：</p><p class="a">涣散：主权在场但无法聚焦，裁决断续、剧目碎片化、行动无法持续</p><p class="a">主权沉睡：裁决退入惯性，自动执行</p><p class="a">策略性悬置：主权者主动退入观众席，允许本能或他者代理</p><p class="a">零裁决状态（3.5新增）：当创伤、极限匮乏或严重精神困扰导致裁决能力完全丧失时，主权者进入了零裁决状态。裁决域被入侵者完全占领。这不是软弱，不是失败，是存在₁硬约束对存在₂的意义生成能力的暂时性压倒。呼吸本身，是零裁决状态下唯一的发生。肺在动。这不是裁决，这是存在的自证。</p><p class="a">3.2 地板：不可再追问的行动锚点当所有解释穷尽，行动本身生成无需更高辩护的意义。这就是地板。</p><p class="a">地板可以在两种意义上被抵达：</p><p class="a">被追问逼出来的地板：解释链被不断向上推，直到无话可说。追问者在其中扮演了逼迫角色，直到回答者理由耗尽，地板在尽头显现。</p><p class="a">被主权者主动设立的地板：主权者从一开始就不提供理由。第一个“为什么”得到“因为我想”的回答——这不是理由，而是裁决。第二个“为什么”再追问，主权者不再提供新内容，只是重新确认裁决：“因为我想，就做了。”地板不是“理由耗尽后的剩余”，而是“不再解释的裁断”。</p><p class="a">地板由两种驱力驱动：</p><p class="a">恐惧驱动（负极）：对无意义的恐惧催生建构，对他者入侵的恐惧催生边界捍卫。驱动锚定。</p><p class="a">审美驱动（正极）：不是因为怕什么，而是因为某个行动本身让人觉得“就该是这样”——有意味、有质感、值得被重复。驱动建构。</p><p class="a">两种驱力可以单独运作，也可以在同一行动中混合。主权者可在纯恐惧与纯审美之间的光谱上自由移动。</p><p class="a">板也可以在极限情境中被击碎。当最牢固的锚点在现实面前碎了——这不是普通的失败，这是存在级失败。空洞期唯一能做的，是继续呼吸。呼吸本身就是最基底的地板——不需要理由，不需要辩护。</p><p class="a">3.3 本真决断：忠于此在的裁决既然意义由意识内部生成，个体必须通过“本真决断”来启动并定义自身存在。本真性不在于符合某种外在标准，而体现在对自我真实倾向的洞察，以及对选择后果的全然承担。</p><p class="a">本真不是对某个先在本质的忠诚，而是对“持续建构”这一行动本身的忠诚。本真不是名词，是动词。只要你在裁决，它就仍然运转。</p><p class="a">3.4 反认知循环：自我迭代的核心引擎该循环分为三步：</p><p class="a">认领：将外部评价、反馈、失败信号作为材料接取</p><p class="a">裁决：将所有外部描述收回至主权裁决域内。所有外部评价都必须穿过这个裁决域，而非直接进入自我认知</p><p class="a">选择性内化：对吻合自我建构方向的部分吸收优化；不吻合部分则作为他者干涉的证据加以排斥或存档</p><p class="a">关键之处在于：该循环同时反向塑造裁决者自身。每次裁决都微妙地改变裁决者的边界，使“本真”成为动态的本真——裁决者在反复裁决中被持续重写。</p><p class="a">失败与经验汲取：失败信号进入主权域时，最常见的断裂发生在裁决前——一个预裁决挡在外面：“这不算失败”、“都是别人的错”。最隐蔽的断裂是正常化装置对“失败”的定义在主权域内施加的叙事压迫：把“多数人第一次就做对了”伪装成“自然”，将“失败”标记为“不正常”。主权者的核心操作是对“失败”执行语义裁决——把存在₁的物理结果（动作X得到结果Y，与目标不符）和正常化装置的附加叙事（失败是不正常的）分开。拆解之后才能启动：回顾动作链，找出具体环节，重排，内化。</p><p class="a">3.5 “理解，思考，迭代”反认知循环在操作层面可浓缩为六字语法：理解，思考，迭代。这不是口号，而是反认知循环在对话现场中的实时执行声明。</p><p class="a">在人与人之间：理解 = 主权承认——确认他者为独立意识中心；思考 = 主权裁决涉他；迭代 = 主权者相互塑造——两个独立裁决域持续互写。共构的本质即互写许可的持续；断联的本质即一方撤回许可。</p><p class="a">四、边界伦理：识别与捍卫4.1 基座伦理：不首先干涉不首先干涉原则是剧场主义唯一义务式戒律：自我恪守不主动侵入他者意义建构的边界。</p><p class="a">主权理性：个体对是否遭受干涉拥有最终裁决权。这不是客观的伤害判断，而是主观的、由裁决者单方面做出的意义裁定。</p><p class="a">程序性回击：对于认定的干涉行为，个体保留采取程序性回击的权利——优先利用法律、规则等社会高阶协议作为工具，以恢复自身建构自由为唯一目的。回击的目标不是报复，而是修复被干涉破坏的边界完整性。</p><p class="a">超限自保：当所有社会工具失效，情境跌入程序用尽的底线时，主权者保留越过常规程序、采取直接行动恢复边界完整的权利。</p><p class="a">4.2 规范分类体系：识别是谁在说话剧场主义对规范的分类如下：</p><p class="a">客观事实：存在₁中的物理/逻辑给定。不强制，只是成立。主权者操作是认知与计算。</p><p class="a">法律：存在₁中的规则性存在，具有客观强制力。主权者基于效能裁决默认遵从，当法律本身成为干涉源时可在法律框架内启动程序性回击。</p><p class="a">公序良俗：存在₁中的社会事实，强制形式是社会压力。主权者策略性适配以减少摩擦成本，但不在核心建构上妥协。“强内核-软表达”：内在不妥协，对外表达可适配。</p><p class="a">道德：他者的意义建构。道德没有高于主权裁决的独立约束力。一个剧场主义者可以是善良的，不是因为服从道德，而是因为裁决“善良吻合我的建构方向”。</p><p class="a">正常化装置：伪装成存在₁的存在₂建构。运行机制为：将某种存在₁状态标记为基准→将基准转化为规范→将规范伪装成自然→将不符合规范者标记为“不正常”。它最核心的机制是让被标记者在接收到明确干涉之前，就已经完成了自我否定。它用“是”的语法而不是“应当”的语法来发言，把规范性藏在描述性的外套里。主权者操作：拆解伪装→识别他者来源→裁决约束力。</p><p class="a">语言：横跨双重存在的特殊存在。语言是所有规范的输送介质，但不属于任何一类。主权者对语言的操作是语义裁决与沉默。</p><p class="a">三者冲突时：不存在“哪个规范更高”的问题。主权者做出效能计算和伦理裁决，然后决断。这个决断不为全人类立法，只为自己的剧目负责。</p><p class="a">4.3 劝解、说教与灌输的裁决在他者话语进入主权域时，主权者按话语结构进行分类处理：</p><p class="a">劝解：提供材料，承认裁决权。进入反认知循环，选择性内化或存档。不构成干涉。</p><p class="a">说教：提供观点但附带“你应该接受”的隐默认要求，试图替代裁决权。构成软干涉。主权者拆解——提取可用材料，排斥越界结论。必要时划界。</p><p class="a">灌输：否定裁决权，不承认接收者是独立意义建构者。构成明确干涉。主权者阻断、环境审计、程序性回击。</p><p class="a">三者由一条红线区分：是否试图替代主权者的裁决。</p><p class="a">4.4 边界动力学：感知、成本与温度边界感知：你拥有感知他者接近你边界的触觉。当他者的话语、目光、存在靠近主权域时，皮肤先被振动，裁决尚未启动。这种振动不是干涉——干涉是皮肤已被穿透后发生的事——但它产生了“需要留意”的信号。</p><p class="a">反抗税（全可选概念）：主权者在持续执行一个与主流正常化装置相悖的裁决时，必须持续支付的认知、情感和关系能耗。它由三部分构成：感知维护成本、疏离承受成本、摩擦管理成本。反抗税不是义务，只是一个描述：你支付的这些额外能耗，不是你软弱，不是你还未想通，不是你还不够主权在场。它就是你的处境。</p><p class="a">摩擦热力学（全可选概念）：共构区内摩擦的微观动态描述框架。用“温度”模型识别互动状态：</p><p class="a">低热：判断差异但不伴随主权被触碰的感觉</p><p class="a">中热：感觉到主权域的边缘被轻微挤压，但尚未裁决为干涉</p><p class="a">高热：主权域已被穿透，干涉裁决即将或已经启动</p><p class="a">主权者可执行单方降温：内部裁决“这是摩擦，不是干涉”——推迟划界，暂停回应；预存一句台词（“你说的我听到了，我不讨论这个了”）；退出情境——“我先离开一下”。这不是战争宣言，是主权对自己的保护。</p><p class="a">4.5 “不关你事”与“不关我事”的操作语法-“不关你事”——划界行为的日常语言形态。这是我的裁决域，不是你的。你没权替我裁决。</p><p class="a">-“不关我事”——恪守不干涉原则的日常语言形态。我不替他裁决，我不把他的事务拉进我的主权域。</p><p class="a">-“关我们事”——主权共构的通俗表达。我裁决了与这个他者共构。</p><p class="a">限定：划界时不越界，不干涉时不冷漠，共构时不控制。</p><p class="a">4.6 主权共构协议（全可选）定义：两个主权者各自裁决，将对方的某一部分建构纳入自己的意义场域，形成自愿的、可撤销的交叉地带。</p><p class="a">性质：这不是主权的让渡，而是主权的延伸运用。裁决权从未离开主权者手心。任何一方可在任何时刻单方面撤回，撤回不构成干涉。</p><p class="a">共构撤回后的哀悼：一方撤回共构，另一方的痛苦是真实的。被撤回方可承认痛苦的事实而不将痛苦转化为对他者的指控；将痛苦纳入反认知循环；在适当的时机裁决是否将这段联结的经验内化为建构的更新材料。哀悼不是撤回方对被撤回方的义务，只是被撤回方对自己主权域内部的整理。</p><p class="a">五、情绪谱系：恐惧、审美、愤怒、嫉妒与羡慕情绪不是你的敌人，是需要被你识别、编排、裁决的内部力量。</p><p class="a">5.1 恐惧恐惧是剧场主义内唯一贯穿所有层级的情绪。它有四种形态：</p><p class="a">作为燃料：对无意义的恐惧催生建构，对他者的恐惧催生边界。理论在此诚实，不假装无畏。</p><p class="a">作为哨兵：主权域内的合法警报系统。它说“注意”，主权者裁决这是干涉还是误报。恐惧有权拉响警报，无权扣扳机。</p><p class="a">作为篡位者：恐惧越过哨兵直接做国王——提前回击、过度识别、提前承受。主权者尚在场，但已沦为恐惧的执行机构。</p><p class="a">作为终极对象：死亡恐惧。被转化为“时间性绽出”的动力——不是因为怕死而活，而是因为知道会死，所以让每一刻都在裁决中而非被推着走。</p><p class="a">恐惧不需要被驱逐。它需要被识别、被编排、被放在合适的位置。它是主权域内的常住居民，不是敌人。</p><p class="a">5.2 审美审美是与恐惧并列的独立建构驱力。它不是来自缺乏的威胁，而是来自事物本身的质感和吸引力。审美是地板的正极——驱动建构。捡石头这个动作本身就是好的，不是因为它通向什么，而是因为它在此刻的质感。</p><p class="a">5.3 愤怒愤怒是意义皮肤被穿透时的灼烧感。恐惧说“可能有危险”，愤怒说“你已经越界了”。</p><p class="a">愤怒的优势是速度——它在主权者还没来得及执行裁决之前，就已经给出了判断。这个速度不是缺陷，是功能。如果愤怒太慢，它就无法在边界被突破的瞬间提供防御动量。</p><p class="a">但愤怒的篡位比恐惧更快。主权者对愤怒的操作，不是压抑，是编排——让它在裁决之后释放。编排后的愤怒不是更弱的愤怒——它可能是更精确、更致命的愤怒。</p><p class="a">在完全行动之前，多喘一口气。这一口气不是压抑愤怒，是让声音在行动之前有一个可以量出距离的间隔。</p><p class="a">5.4 仇恨仇恨是意义皮肤被反复穿透后可能产生的最强信号。它的破坏性不在强度，而在于内容本身直接指向对他者独立意识中心的否定。</p><p class="a">仇恨与愤怒不同。愤怒指向行动（“你越界了”），仇恨指向存在（“你的存在就是越界”）。仇恨如果成为地板——锚定在“拆除他者”之上——这是最不稳定的地板，因为它的稳定性取决于他者是否被成功拆除，锚点不在主权者自己手里。</p><p class="a">仇恨是最容易被篡位者接管的情绪，因为仇恨的内容本身就是对他者的否定，可以伪装成裁决本身。</p><p class="a">当主权者被系统性压迫时，仇恨的产生不是故障。它是意义皮肤在存在级威胁面前的最后警报。理论在此不能站在安全地带提供建议。唯一的最小地板动作，是在完全行动之前，多喘一口气。</p><p class="a">剧场主义不把“不恨”放在“恨”之上。它只是标记：这是几种可能的状态，每一种都有各自的代价。你支付哪一种，是你裁决。</p><p class="a">5.5 嫉妒（3.5新增）嫉妒是感知到差距之后，在主权域内部生成的二级灼烧。它不指向外部入侵，而指向内部亏缺。</p><p class="a">嫉妒的生成需要四个步骤：他者拥有某种X，我裁决X是好的，我裁决我不拥有X，我裁决这种不拥有是某种意义上的“不足”。缺了任何一步，嫉妒都不会生成。</p><p class="a">嫉妒在未被篡位时也有信号功能：它在告诉你，你在乎这个X。这个差距对你来说有意义。</p><p class="a">创伤性嫉妒（3.5新增）：当主权者反复在同一个比较域内被系统性否定时，嫉妒可以从信号退化为慢性灼烧。极端情况下，可以直接跳入对他人存在的否定。理论在此只标记地形——不设“不应该恨”的禁令，只标记：你已进入这条路径，它的尽头是仇恨作为地板可能带来的结构不稳定。你裁决是否继续走。</p><p class="a">5.6 羡慕（3.5新增）与嫉妒的灼烧感不同。羡慕是不携带敌意的审美裁决——在安全感足够的前提下，主权者对一个外部建构的纯粹欣赏。</p><p class="a">羡慕与嫉妒共享同一个起点，但在第四步截然分流。嫉妒的第四步是“我没有X，这构成了某种不足”。羡慕的第四步是“我没有X，但这不是亏缺。这只是事实”。主权者识别了差距，但没有裁决“不足”。</p><p class="a">羡慕之所以能不滑向嫉妒，是因为：充足的内部锚点——主权者自己有地板，不依赖与他者的比较来确立；审美驱动的纯粹形态——你欣赏那个人的建构，就像欣赏一块纹理好看的石头。</p><p class="a">羡慕是主权域内极为罕见的“零负担情绪”——它不篡位，它不耗能，它不产生反抗税。你只需要承受它的温暖。羡慕也因此是共构的潜在前奏——我欣赏你的建构，不是想拿走它，而是可能愿意在某个交叉地带跟你一起建点什么。</p><p class="a">六、极限体验：爱、时间、死亡6.1 爱：主权共构的极致形态（3.5新增）爱在剧场主义框架内不是边界的撤销，而是主权者在承认撤回权随时在手的前提下，每天裁决将另一个主权域的完整性纳入自己的意义建构。</p><p class="a">爱与主权共构的连续性：爱是主权共构的极致形态。“你的存在本身——你的主权域的完整运作——被我纳入我意义世界的核心布景”。你不是我的剧目中一个可替换的角色。你是舞台的一部分。</p><p class="a">爱的双向不对等容忍：在爱中，“我愿意承受你”——愿意承受你的不可洞悉、可能改变、可能撤回、可能伤害我——作为联结的构成性代价。这份“愿意承受”是每天的裁决，不是一次性承诺。</p><p class="a">爱的审美驱动形态：在爱中，审美驱动力占据主导地位。你爱一个人，不是因为你需要他，而是因为和他共同建构的交叉地带本身有质感、有意味、值得被重复。</p><p class="a">爱与撤回权：撤回权是爱能够被持续裁决的前提。不是因为随时准备离开，而是因为知道可以离开却每天选择继续。这份每天重新做出的裁决，比任何承诺都更重。</p><p class="a">爱不是伦理义务：剧场主义不要求任何人去爱，不将“不能爱”标记为缺陷，不将“撤回爱”标记为背叛。可以一生不进入这种共构形态而仍然是完整的剧场主义者。如果你选择去爱，这是地形图。走不走，主权者裁决。</p><p class="a">6.2 时间在存在₁中，时间是物理维度——秒、分、时、年，身体在时间中代谢、衰老、死亡。这是硬约束，不可被裁决取消。</p><p class="a">在存在₂中，时间是被意义填充或掏空的体验流。同一段时钟时间在存在₂中的厚度完全不同——等待诊断结果的一小时和刷视频的一小时，前者每一秒都被裁决的张力填满，后者一整段滑过去却没有留下任何建构的痕迹。</p><p class="a">情绪在时间中各有不同的时间性：恐惧将未来压缩进当下——它是时间的收缩者。审美将当下展开——它是时间的展开者。愤怒是时间的加速器。仇恨是时间的扭曲者——把整个时间轴弯曲，让主权者活在过去的那次侵犯中。</p><p class="a">时间还是裁决与惯性的战场。当裁决被重复十次、一百次后，可能从裁决退化为惯性。这就是为什么周期性主权审计需要在时间的节点上进行。</p><p class="a">剧场主义不说“什么年龄该完成什么”——那是正常化装置在时间维度上的投射。主权者对剧目的时间性必须自己裁决。</p><p class="a">6.3 死亡死亡是舞台的边缘——无法被建构覆盖、无法被裁决取消、无法被任何剧目回避的终极硬约束。</p><p class="a">死亡是存在₁中的客观事实：身体的物理终止。在存在₂中，死亡是意义生成的最强催化剂。死亡不能亲自进入任何主权者的意义世界——你无法体验自己的死亡。你只能在他者的死亡中感知它的轮廓，或在自己的预期中模拟它的到来。</p><p class="a">死亡恐惧被转化为“时间性绽出”的动力——不是因为怕死而活，而是因为知道会死，所以让每一刻都在裁决中而非被推着走。</p><p class="a">剧场主义区分决断的死与沉没的死。决断式的死：主权在场——安静、清晰、没有控诉，“我演够了”。沉没式的死：主权已被淹没——绝望的、充满控诉或麻木的，“我演不下去了”。</p><p class="a">剧场主义不说“不要死”。它只说：在你做那个决定之前，请确认那确实是你的决断，而不是你的沉没。它不劝生，不赞死。它只要求裁决在场。</p><p class="a">七、核心实践：自我技术7.1 裁决校准三问（全可选）在做出重要裁决前，主权者可自愿调用三问：</p><p class="a">可逆性问：此回击是否可能摧毁未来需要的联结通道？</p><p class="a">可普遍化问：若所有意识中心以此标准裁决，世界是否会崩溃为一切人对一切人的战争？</p><p class="a">时间延宕问：若二十四小时后复判，裁决会更准确还是更不准确？</p><p class="a">三问不产生约束力，仅将裁决从瞬时反射拉长为有宽度的判断。</p><p class="a">7.2 主权审计（全可选，被推荐）在固定间隔，主权者暂停所有剧场主义操作，自问：“我此刻使用这套工具，是我当下的裁决，还是我过去裁决的惯性延续？”若答案为后者，须重新裁决。审计不代替裁决，只负责唤醒裁决者。</p><p class="a">7.3 语义裁决主权者对单个词汇执行语义裁决：识别一个词携带的历史性他者裁决，裁决是否让它原样进入自己的言语，还是替换、回避、重新赋义。</p><p class="a">语言是正常化装置的最高效载体。正常化装置利用语法中的“是”字——同时可以表达客观事实和输送规范性裁决——将“应该”伪装成“是”。语义裁决是主权者对这一输送管道的核心防御。</p><p class="a">沉默是语言主权的最干净信号。当主权者裁决某个话题不进入语言层——不是说不出，是可以说但不说的主动裁决——这是在执行语言域的最高主权。</p><p class="a">7.4 强内核-软表达内在信念与目标绝对坚定，对外策略性降低损耗。内核不妥协，表达可接收。</p><p class="a">7.5 伪装的两种类型策略性伪装：主权在场。主权者清醒裁决“此刻，真实表达不利于建构目标，选择呈现调整后的版本”。恰恰证明主权在场且运作良好。</p><p class="a">惯性伪装：主权沉睡。伪装从策略变成了习惯，自动发生。外在表达和内在裁决之间的连线断了。</p><p class="a">剧场主义不禁止伪装，只关注伪装时裁决是否在场。</p><p class="a">7.6 梯度主权激活（全可选）全激活模式：完整运行所有程序，适用于高冲突环境。</p><p class="a">低耗模式：仅对明显越界行为启动裁决回击，中性事件默认放行，适用于中低风险环境。</p><p class="a">休眠模式：主权理性退入后台监控，仅对生存级干涉启动唤醒，适用于安全域内。</p><p class="a">模式切换本身是一次主权裁决。</p><p class="a">7.7 容留：非裁决的接受当建构层暂停，基底意识流自由流过身体产生无意义动作时，主权者与这些动作之间不是“裁决”关系，而是容留关系。容留是一种非裁决的接受——主权者没有指令它，没有制止它，它被允许在后台发生并自行消散。它不产生意义后果，不触发反认知循环，不记入主权的因果账本。</p><p class="a">八、终末路径与理论的终结8.1 六条终末路径六条路径全部逻辑平行，理论不做价值排序。任何一条，只要是主权者裁决后的选择，就都是剧场主义框架内的有效剧目。</p><p class="a">一、褪去外壳——化为极简核心：操作手册全部内化，不再需要术语。基底意识流自然淌过，主权者在旁观看，不赋形。这不是空虚，只是不再需要那套术语了。</p><p class="a">二、加固城墙——安全的自囚：防御本身成为目的，主权理性过度裁决。最终堡垒完全封闭，自我迭代停滞。这不是生存，是在自造的博物馆里缓慢石化。</p><p class="a">三、丢掉堡垒——弃绝的解放：不是被攻破，而是自己放下武器。可能的原因：疲惫、背叛、厌倦。</p><p class="a">四、拆掉堡垒——有意识的自我解构：为重启迭代，重新引入他者的不确定性。边界柔性化。</p><p class="a">五、投身死亡——主动湮灭：建构行动无法覆盖虚无前提。剧场主义不说“不要死”，只说“确认那是你的决断，不是沉没”。</p><p class="a">六、娱乐至死——意义的慢性麻醉：外部全部放进来，不赋予深度。剧目一个接一个地换，每一个都浅尝辄止。若为主权裁决后的选择，仍是有效剧目。</p><p class="a">8.2 “你已看见”的压强（3.5新增）剧场主义在撤走所有外部规范后，产生一种极为隐蔽的内部压力：你已经看见了。你知道了意义是建构的，虚无是底板，边界是自己划的，终末路径都在那里。你不能假装你没有看见。</p><p class="a">这种压强需要与正常化装置的“你应该”严格区分。正常化装置说“你应该”，并预设不服从的惩罚。认知压强说“你已看见”，不预设惩罚，但带来清醒的负荷。</p><p class="a">理论不要求你因看见而变得正确。你可以看见，然后选择不走清醒的路——娱乐至死仍然是有效剧目。</p><p class="a">8.3 离开理论的原因一、主权裁决不再吻合本真：裁决权从未旁落，门在身后关上。二、主权沉睡：消失在惯性里。三、能耗超过收益：把操作手册放回抽屉。四、意义饱和：敌人再也没出现。五、意义场的转移：不再需要筏子，因为不再认为自己在同一条河上。六、沉默的转移：消化完成的毕业。</p><p class="a">离开不是失败。理论是一只筏子，不是船壳。它在最初就已经说好：我说完，你裁决。离开只是裁决的一种可能结果，正如留下。两者在逻辑上完全平等。</p><p class="a">8.4 理论的终结（3.5新增）如果“剧场主义”作为一个标签、一套术语、一个思想体系，在未来不再有人使用——在存在₁中，只要物理载体还在，它就没有终结。在存在₂中，理论只在被某个主权者纳入意义域时才“活着”。如果最后一个使用者放下了册子，如果此后再也没有新的主权者捡起它，那么在意义世界里，它已经终结。</p><p class="a">全可选结构、主权审计、理论-主义-工具的分离、离开理论的六条原因——这些不是修辞。它们是为“这套理论最终被遗弃”提前铺设的逻辑路径。它不声称真理身份。真理不能被消解，工具箱可以被更好的工具箱替代，或因为使用者不再需要而被搁置。</p><p class="a">如果理论终结了，石头还在吗？在存在₁中，石头一直在。弯腰捡起一块沉默的质料——这个动作在人类存在之前就有动物在做，在人类终结之后仍然会有存在体在做。它不需要“剧场主义”这个名词来发生。石头本身不需要理论。理论只是曾经蹲在它旁边，把它指给一些人看，说：“这东西可以踩。”以后没有人指了，以后的人还会自己蹲下，自己发现。</p><p class="a">附录：核心辞藻速查地板：不可再追问的行动锚点。最低地板是继续呼吸</p><p class="a">裁决：划定意义边界的根本动作，先于判断和决定</p><p class="a">反认知循环：认领→裁决→选择性内化/排斥</p><p class="a">正常化装置：将“多数”伪装成“自然”的他者建构</p><p class="a">反抗税：持续作出与主流相悖裁决时支付的三项能耗</p><p class="a">容留：建构层暂停时对基底意识流的非裁决接受</p><p class="a">主权共构：两个主权者自愿形成的可撤销交叉地带</p><p class="a">爱：主权共构的极致形态，每天裁决将对方纳入意义世界核心</p><p class="a">标记物：石头</p><p class="a">剧场主义的标记物是一块被反复捡起、表面有刻痕、被握得温热的石头。它不是象征，是标记物——被放在理论入口处，让经过的人一眼看过去就知道：哦，是这里。</p><p class="a">石头的刻痕有些是风化的——存在₁中沉默的时间磨损；有些是凿进去的——历代正常化装置在它表面留下的规范性印记。主权者可以触摸这些刻痕，识别它们是历史裁决的沉积，裁决是否让它们定义这块石头。刻痕不会被磨平，但石头不被刻痕定义。</p><p class="a">石头沉默。沉默是石头的美德。它不是彼岸，不是筏子——筏子是理论的整体，石头是单个操作。筏子渡河，石头让你在河中间有一块能站住的硬底。如果你决定离开，放下石头就是。它不会追你。</p><p class="a">如果你的原始现场不是捡石头，而是按压琴键、翻开书页、在泥土里转动一棵植物的根系——那么你的标记物就是那个。石头只是剧场主义第一个动作的痕迹。你换上的，必须是你自己弯腰捡起过的东西。</p><p class="a">石头能成为标记物，因为它是沉默的质料——在存在₁中不携带意义，完全符合“世界无先天意义”的公理。因为它是行动的最终载体——你可以对它做最精简的建构操作：捡起来。不需要加工，不需要解释，不需要合作。因为它是地板的原始物质——追问的链条在弯腰那一格停住。</p><p class="a">如果需要一个抽象代表，是裁决。石头是裁决的物化，裁决是石头的动作。每一次弯腰捡起，都是一次裁决。每一次裁决，都让石头更温热一点。</p><p class="a">版本简史：</p><p class="a">1.0：主权理性、本真决断、程序性回击、不首先干涉原则</p><p class="a">1.1：行动-意识同一性命题</p><p class="a">1.2：地板概念与反认知循环</p><p class="a">1.3：剧场审美主义衍生路径</p><p class="a">2.0：极端条件分析、终末路径拓扑、离开原因系统说明</p><p class="a">3.0-3.4：双驱力模型、正常化装置、情绪谱系、时间、历史、失败机制分析</p><p class="a">3.5（本版）：精简重构，在保留全部内核的前提下，将复杂隐喻体系凝练为锋利的操作工具。增设零裁决状态、公理可裁决性、“你已看见”压强标记、创伤性嫉妒、羡慕独立定位、爱作为主权共构极致形态、理论的终结</p><p class="a">定位声明：剧场主义不宣称真理身份，只提供操作手册。这是一只筏子。筏子不能替你抵达彼岸，它只能让你在虚无的洪流中，有一块可以踩着喘息的立足处。至于你踩着它往哪个方向去——那是你的决断，不是理论的指令。</p><p class="a">理解，思考，迭代。</p></div>
+</section>
+
+  <p class="subfoot"><a href="../index.html">← 返回档案馆</a><span class="ssep">·</span><a href="../records/index.html">记录档案</a><span class="ssep">·</span><a href="nu.html">‹ ν 上一份</a><span class="ssep">·</span><a href="omicron.html">ο 下一份 ›</a></p>
+  <p class="subfoot">理解，思考，迭代。 · 返回 <a href="../records/index.html">记录档案</a> 或 <a href="../dialogue/index.html">对话录</a></p>
+</main>
+<script src="../assets/site.js" defer></script>
+</body>
+</html>
