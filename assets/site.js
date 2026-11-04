@@ -1,5 +1,28 @@
 
 (function(){
+  /* favicon 跟随系统深浅：Chromium 不认 <link rel="icon"> 的 media 属性
+     （只按系统偏好做一次静态选择，且切主题不重算）。
+     这里在运行时挑一版，并监听变化；不支持 JS 的浏览器仍由 head 里的两个 media link 兜底。 */
+  var fq = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
+  var ficons = document.querySelectorAll('link[rel="icon"][type="image/svg+xml"]');
+  if(ficons.length){
+    var fel = ficons[0];
+    var fhref = fel.getAttribute('href') || '';
+    var fbase = fhref.replace(/favicon-(?:gold|ink)\.svg.*$/, '');
+    if(fbase !== fhref){
+      for(var fi=1; fi<ficons.length; fi++){ ficons[fi].parentNode.removeChild(ficons[fi]); }
+      fel.removeAttribute('media');
+      var fapply = function(){
+        fel.setAttribute('href', fbase + (fq && fq.matches ? 'favicon-gold.svg' : 'favicon-ink.svg'));
+      };
+      fapply();
+      if(fq){
+        if(fq.addEventListener) fq.addEventListener('change', fapply);
+        else if(fq.addListener) fq.addListener(fapply);
+      }
+    }
+  }
+
   var root=document.documentElement;
   function setTheme(t){ if(t==='light'){root.dataset.theme='light';}else{delete root.dataset.theme;} try{localStorage.setItem('th-theme',t)}catch(e){} var b=document.getElementById('theme'); if(b)b.textContent=(t==='light'?'☀':'☾'); }
   var saved='dark'; try{saved=localStorage.getItem('th-theme')||'dark'}catch(e){}
