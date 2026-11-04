@@ -1,0 +1,21 @@
+{
+  "name": "剧场主义 · 全档案馆",
+  "short_name": "剧场主义",
+  "description": "剧场主义档案站：三公理、概念、51 章理论、对话录与工作日志。",
+  "start_url": "./index.html",
+  "display": "browser",
+  "background_color": "#0a090d",
+  "theme_color": "#0a090d",
+  "icons": [
+    {
+      "src": "assets/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
